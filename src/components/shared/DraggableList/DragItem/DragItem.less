@@ -1,0 +1,16 @@
+
+.DragItem {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    transition: opacity 0.7s ease;
+
+    &.grabbing {
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+        opacity: 0.4;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+    }
+}

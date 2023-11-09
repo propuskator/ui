@@ -1,0 +1,43 @@
+@import '../../../../assets/variables.less';
+
+.EnumControl {
+    display: flex;
+    width: 100%;
+
+    &.processing {
+        pointer-events: none;
+
+        .unitWrapper {
+            opacity: @O-FIELD_DISABLED_OPACITY;
+        }
+    }
+
+    .dropdownWrapper {
+        width: 100%;
+
+        > * {
+            width: 100%;
+        }
+
+        > * > * > *:last-child * {
+            font-weight: 400;
+        }
+    }
+
+    &.withUnit {
+        justify-content: space-between;
+
+        .unitWrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-grow: 1;
+
+            .unitField {
+                margin-left: 10px;
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+    }
+}

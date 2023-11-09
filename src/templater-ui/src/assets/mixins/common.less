@@ -1,0 +1,39 @@
+@import '../variables.less';
+
+.M-TEXT-OVERFLOW {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.M-LINK_CONTROL {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: -0.107143px;
+    word-spacing: 0.01rem;
+    color: var(--color_primary--500);
+    cursor: pointer;
+    pointer-events: all;
+    text-decoration: underline dashed var(--color_primary--500);
+    -webkit-text-decoration: underline dashed var(--color_primary--500);
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.M-LINK_CONTROL--HOVER {
+    color: var(--color_primary--700);
+    text-decoration: underline dashed transparent;
+    -webkit-text-decoration: underline dashed transparent;
+}
+
+.M-LINK_CONTROL--FOCUS {
+    color: var(--color_primary--700);
+    text-decoration: underline dashed transparent;
+    -webkit-text-decoration: underline dashed transparent;
+}

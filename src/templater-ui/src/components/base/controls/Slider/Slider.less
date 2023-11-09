@@ -1,0 +1,33 @@
+@import '../../../../assets/variables.less';
+
+.Slider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .value {
+        width: 30px;
+        margin-right: 4px;
+        color: @C-BLACK;
+        font-size: 11px;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .sliderControl {
+        width: 37px;
+        margin: 0 2px 0 0;
+
+        .thumb {
+            margin-top: -5px !important;
+            width: 15px !important;
+            height: 15px !important;
+        }
+    }
+
+    &.darkTheme {
+        .value {
+            color: @C-WHITE;
+        }
+    }
+}

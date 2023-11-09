@@ -1,0 +1,23 @@
+@import "../../../../assets/variables.less";
+
+.SwitchFormField {
+    margin-right: -7px;
+
+    .body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .label {
+        font-size: 13px;
+        font-weight: 300;
+        color: #898278;
+    }
+
+    &.processing {
+        .label {
+            opacity: @O-FIELD_DISABLED_OPACITY;
+        }
+    }
+}

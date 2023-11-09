@@ -1,0 +1,52 @@
+.SignalLevel {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+
+    &.invalid {
+        .value,
+        .unit {
+            display: none;
+        }
+
+        .level {
+            background: #E5E5E5;
+        }
+    }
+
+    .value,
+    .unit {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    .unit {
+        margin-left: 2px;
+    }
+
+    .signalLevels {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        margin-left: 5px;
+    }
+
+    .level {
+        width: 4px;
+        height: 4px;
+        margin-right: 2px;
+        background: rgba(#2EB4AB, 0.5);
+        border-radius: 2px;
+
+        &.filled {
+            background: #2EB4AB;
+        }
+    }
+}
+
+.tooltip {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}

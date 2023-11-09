@@ -1,0 +1,71 @@
+@import '../../../assets/variables.less';
+
+.ExpandedChipsList {
+    position: relative;
+
+    .listWrapper {   /* stylelint-disable-line */
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: -3px;
+
+        .content {
+            width: 100%;
+            padding: 2px;
+            flex-wrap: wrap;
+            display: inline-flex;
+
+            > * {
+                display: inline-flex;
+                margin-right: 3px;
+                margin-bottom: 3px;
+            }
+        }
+    }
+
+    .chip {
+        cursor: unset;
+
+        div {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            line-height: 1.5;
+        }
+    }
+
+    .elseChip {
+        align-items: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        justify-content: space-between;
+        max-width: 140px;
+        border-radius: 4px;
+        cursor: default;
+        outline: none;
+        text-decoration: none;
+        position: relative;
+
+        button {
+            user-select: all;
+            font-size: 11px;
+            letter-spacing: 0.01rem;
+            background: var(--color_primary--600);
+
+            @media @M-WITH_HOVER {
+                &:hover,
+                &:focus {
+                    background: var(--color_primary--700);
+                }
+            }
+
+            > * {
+                font-weight: 400;
+                color: @C-WHITE !important;
+            }
+        }
+    }
+}

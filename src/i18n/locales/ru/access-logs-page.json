@@ -1,0 +1,20 @@
+{
+    "Access logs": "Журнал доступа",
+    "Access log is empty": "Журнал доступа пуст",
+    "Find by subject or tag": "Найти по субъекту или метке",
+    "Access denied": "Отказ в доступе",
+    "Success": "Успешно",
+    "Alarm": "Тревога",
+    "Alarm activated": "Тревога активирована",
+    "Alarm deactivated": "Тревога деактивирована",
+    "Time": "Время",
+    "Download csv": "Cкачать csv",
+    "File in progress": "Файл в процессе генерации",
+    "Mobile device": "Мобильное устройство",
+    "Phone call": "Телефонный звонок",
+    "Exit button": "Кнопка выхода",
+    "Access point video": "Видео с точки доступа",
+    "Access point picture": "Фото с точки доступа",
+    "Failed to load image": "Не удалось загрузить изображение",
+    "Failed to load video": "Не удалось загрузить видео"
+}

@@ -1,0 +1,9 @@
+export const ROOT             = '/';
+export const LOGIN            = `${ROOT}login`;
+export const REGISTER         = `${ROOT}register`;
+export const PASSWORD_RESTORE = `${ROOT}password-restore`;
+export const DASHBOARD        = `${ROOT}dashboard`;
+export const ACCOUNT_SETTINGS = `${ROOT}account-settings`;
+export const ERROR            = `${ROOT}error`;
+export const NO_MATCH         = '*';
+export const INITIAL_PAGE     = DASHBOARD;

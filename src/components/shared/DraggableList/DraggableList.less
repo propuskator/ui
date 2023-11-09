@@ -1,0 +1,36 @@
+@import '../../../assets/variables.less';
+
+.DraggableList {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 4px;
+
+    &.processing {
+        opacity: @O-FIELD_DISABLED_OPACITY;
+
+        .dropItem {
+            pointer-events: none !important;
+            cursor: default !important;
+
+            * {
+                pointer-events: none !important;
+                cursor: default !important;
+            }
+        }
+    }
+
+    .title {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 10px;
+        user-select: none;
+    }
+
+    @media @M-TABLET_XS_TO {
+        display: none;
+    }
+}

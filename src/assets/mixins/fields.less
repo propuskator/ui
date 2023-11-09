@@ -1,0 +1,51 @@
+@import '../variables.less';
+@import './common.less';
+
+.M-LABEL {
+    &:extend(.M-TEXT-OVERFLOW);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 3px;
+    color: @C-LABEL_COLOR;
+    background: @C-WHITE;
+    font-size: 13px;
+    font-weight: 300;
+    overflow: hidden !important;
+    transform: translate(14px, 10px) scale(1);
+    transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    transform-origin: top left;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+}
+
+.M-LABEL--SELECTED {
+    padding: 0 2px;
+    transform: translate(14px, -6px) scale(0.75) !important;
+}
+
+.M-LABEL--FOCUSED {
+    color: var(--color_primary--500);
+    transform: translate(14px, -6px) scale(0.75) !important;
+}
+
+.M-VALUE {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 20px 0 14px !important;
+    color: @C-BLACK;
+    background: @C-WHITE;
+    font-size: 13px;
+    font-weight: 300;
+    overflow: hidden !important;
+}
+
+.M-CLEAR_BUTTON {
+    margin-right: @S-ADORNMENT-MARGIN;
+}

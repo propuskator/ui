@@ -1,0 +1,50 @@
+@import '../../../../assets/variables.less';
+
+.ScreenHeading {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 0 5px;
+    border-radius: 10px 10px 0 0;
+
+    &.darkTheme {
+        background: @C-DARK-SECONDARY;
+        border-bottom: none;
+
+        .title {
+            color: @C-WHITE;
+        }
+    }
+
+    .control {
+        display: flex;
+        margin-right: 3px;
+        transform: rotate(180deg);
+
+        svg {
+            width: 11px;
+            height: 11px;
+        }
+    }
+
+    &.withoutBackControl {
+        .title {
+            display: flex;
+            align-items: center;
+            min-height: 30px;
+            margin-left: 7px;
+        }
+    }
+
+    &.fullScreenWidget {
+        padding: 22px 10px 0 5px;
+
+        .title {
+            width: 146px;
+            text-align: center;
+        }
+    }
+}
+
+.tooltip {
+    margin-top: 5px !important;
+}

@@ -1,0 +1,60 @@
+@import '../../../assets/variables.less';
+
+.EmptyList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+
+    .iconWrapper {
+        path {
+            fill: @C-GREY_LIGHT;
+        }
+
+        @media @M-TABLET_XS_TO, @M-MOBILE_LANDSCAPE_TO {
+            svg {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    }
+
+    .childrenWrapper {
+        width: 100%;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 23px;
+        text-align: center;
+        color: @C-GREY_MEDIUM;
+        margin-top: 40px;
+        user-select: none;
+
+        @media @M-TABLET_XS_TO {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        @media @M-MOBILE_TO, @M-MOBILE_LANDSCAPE_TO {
+            width: 100%;
+            height: 22px;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+    }
+
+    &.sizeS {
+        .iconWrapper {
+            svg {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        .childrenWrapper {
+            margin-top: 20px;
+            font-size: 15px;
+        }
+    }
+}

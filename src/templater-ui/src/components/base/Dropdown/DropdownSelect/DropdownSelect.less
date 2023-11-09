@@ -1,0 +1,45 @@
+@import "../../../../assets/variables.less";
+
+.DropdownSelect {
+    .inputWrapper {
+        height: 30px;
+        min-height: 30px;
+    }
+
+    .input {
+        display: none;
+    }
+
+    .dropdownIcon {
+        border-radius: 0;
+    }
+}
+
+.itemsWrapper {
+    width: auto !important;
+    min-width: 180px;
+    transform: translateX(calc(-100% + 28px));
+    margin-top: 6px;
+
+    .itemMenu {
+        padding: 0 15px 0 15px !important;
+
+        &::after {
+            display: none !important;
+        }
+    }
+}
+
+.option {
+    display: flex;
+    align-items: center;
+
+    .optionCheckbox {
+        pointer-events: none;
+        margin-right: 10px;
+    }
+
+    .optionLabel {
+        color: #444343;
+    }
+}

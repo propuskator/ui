@@ -1,0 +1,110 @@
+@import '../../../assets/variables.less';
+
+.MobileEntityList {
+    width: 100%;
+
+    &.processing {
+        pointer-events: none;
+
+        .errorMessage {
+            opacity: @O-FIELD_DISABLED_OPACITY;
+        }
+    }
+
+    .errorMessage {
+        transition: opacity 0.3s ease;
+    }
+
+    .expansionPanel {
+        height: auto;
+        background: @C-WHITE;
+        border-radius: 4px;
+
+        &.selected {
+            background: var(--color_primary--100);
+
+            .details {
+                display: none;
+            }
+        }
+
+        &.selected.fillSelectedBg {
+            *::after {
+                background: var(--color_primary--100) !important;
+            }
+        }
+    }
+
+    .summary {
+        display: flex;
+        align-items: center;
+        width: calc(100% - 50px);
+        min-height: 40px;
+
+        .checkIcon {
+            margin: 0 10px;
+            width: 30px;
+            height: 30px;
+            padding: 9px;
+
+            svg {
+                width: 12px;
+            }
+        }
+
+        .addEntityButton {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 50%;
+
+            svg {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        .customItemWrapper {
+            width: calc(100% - 45px);
+
+            > * {
+                width: 100%;
+            }
+        }
+
+        .chip {
+            max-width: calc(100% - 50px);
+
+            div {
+                width: 100%;
+                line-height: 1.3;
+                overflow: hidden;
+                position: relative;
+            }
+        }
+    }
+
+    .details {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-bottom: 10px;
+        padding-left: 50px;
+        padding-right: 15px;
+
+        .detailsSimpleItem {
+            height: 18px;
+            margin: 0 4px 4px 0;
+            padding: 3px 7px;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 10px;
+            line-height: 12px;
+
+            div {
+                font-size: 11px;
+            }
+        }
+    }
+}

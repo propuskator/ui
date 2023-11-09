@@ -1,0 +1,108 @@
+@import '../../../../assets/variables.less';
+
+.BaseControl {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif !important;
+
+    &.withCopyControl {
+        width: calc(100% - 33px);
+    }
+
+    .formWrapper {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .value {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .unitField {
+        font-size: 14px;
+        font-weight: 400;
+        margin-left: 10px;
+    }
+
+    .editIcon {
+        opacity: 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        padding: 0 7px 0 7px;
+        margin-bottom: -1px;
+
+        svg {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    @media @M-WITH_HOVER {
+        &:hover {
+            .editIcon {
+                opacity: 1;
+            }
+        }
+    }
+
+    .multipleValue {
+        cursor: pointer;
+
+        @media @M-WITH_HOVER {
+            &:hover {
+                .content {
+                    text-decoration: underline dashed @C-GREY_DARK;
+                    -webkit-text-decoration: underline dashed @C-GREY_DARK;
+
+                    .editIcon {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .content {
+            position: relative;
+            height: auto;
+            white-space: pre-line;
+            transition: all 0.3s ease;
+            color: @C-BLACK;
+            font-size: 14px;
+            text-decoration: underline dashed #CACACA;
+            -webkit-text-decoration: underline dashed #CACACA;
+
+            .editIcon {
+                display: inline-flex;
+                opacity: 0;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                padding: 0 7px 0 7px;
+                margin-bottom: -2px;
+
+                svg {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+    }
+
+    .controlWrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .tipMessage {
+        display: flex;
+        font-size: 11px;
+        user-select: auto;
+        pointer-events: all !important;
+        white-space: pre-line;
+    }
+}

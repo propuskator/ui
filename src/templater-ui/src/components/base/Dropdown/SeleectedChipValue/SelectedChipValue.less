@@ -1,0 +1,40 @@
+@import '../../../../assets/variables.less';
+
+.SelectedChipValue {
+    display: flex;
+    width: 100%;
+
+    .chip {
+        max-width: 100%;
+        pointer-events: none;
+
+        * {
+            pointer-events: none;
+        }
+    }
+
+    &.withMoreButton {
+        .chip {
+            max-width: calc(100% - 41px);
+        }
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: -2px;
+
+        > * {
+            margin-right: 3px;
+            margin-bottom: 2px;
+        }
+    }
+}
+
+.tooltipList {
+    .item {
+        min-width: 20px;
+        margin: 0;
+    }
+}

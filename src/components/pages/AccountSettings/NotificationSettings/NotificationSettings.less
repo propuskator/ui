@@ -1,0 +1,19 @@
+@import '../../../../assets/variables.less';
+
+.NotificationSettings {
+    display: flex;
+    flex-direction: column;
+
+    .text {
+        margin: 22px 0 22px;
+    }
+
+    .submitButton {
+        align-self: flex-end;
+        width: 251px;
+
+        @media @M-TABLET_XS_TO {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,123 @@
+@import '../../../assets/variables.less';
+@import '../../../assets/mixins.less';
+
+.AccessLogMedia {
+    &:extend(.M-MODAL);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto !important;
+    width: 670px !important;
+    min-width: 100%;
+    background: @C-WHITE;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    @media @M-MOBILE_LANDSCAPE_TO {
+        width: 450px;
+        height: 340px;
+        overflow-y: auto;
+    }
+
+    @media @M-MOBILE_L_TO {
+        width: 700px;
+        height: 380px;
+        overflow-y: auto;
+    }
+
+    &.topModal {
+        &:extend(.M-MODAL--VISIBLE);
+    }
+
+    &.firstLevel {
+        &:extend(.M-MODAL--FIRST_LEVEL);
+        width: @MODAL-WIDTH_FIRST_LEVEL;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--FIRST_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--FIRST_LEVEL);
+            top: 11px;
+        }
+    }
+
+    &.secondLevel {
+        &:extend(.M-MODAL--SECOND_LEVEL);
+        width: @MODAL-WIDTH_SECOND_LEVEL;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--SECOND_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--SECOND_LEVEL);
+        }
+    }
+
+    .title {
+        margin-bottom: 16px;
+    }
+
+    .mediaSlide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .imageWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-height: calc(100% - 29px);
+        flex: 1;
+    }
+
+    .loader {
+        margin-top: 10px;
+    }
+
+    .imageFallback {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        height: 100%;
+    }
+
+    .fallbackText {
+        font-size: 14px;
+        line-height: 22px;
+        color: #545454;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .mediaImage {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .player {
+        min-width: unset;
+        max-height: 290px;
+
+        @media @M-TABLET_TO {
+            max-height: 250px;
+        }
+    }
+
+    .mediaDate {
+        color: #8E8E8E;
+        align-self: flex-end;
+        margin-top: 10px;
+        flex-shrink: 0;
+    }
+}

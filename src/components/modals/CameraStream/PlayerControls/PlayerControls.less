@@ -1,0 +1,38 @@
+@import '../../../../assets/variables.less';
+
+.PlayerControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 30px;
+    width: 100%;
+
+    .playPauseControl {
+        background: transparent !important;
+
+        .icon {
+            height: 30px;
+            width: 30px;
+        }
+    }
+
+    .volumeControlWrapper {
+        display: flex;
+        height: 30px;
+        width: auto;
+
+        .icon {
+            height: 30px;
+            width: 30px;
+            margin-right: 7px;
+        }
+
+        .slider {
+            min-width: 135px;
+            height: 30px;
+            padding: 0;
+            margin-top: -2px;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+@import '../../../../assets/variables.less';
+@F-TEXT_FONR_SIZE: 12px;
+
+.Thermostat {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .valueWrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 52px;
+        cursor: default;
+
+        .value {
+            transition: all 0.3s ease;
+            font-weight: 300;
+            font-size: 12px;
+        }
+
+        .unit {
+            font-size: @F-TEXT_FONR_SIZE;
+            font-weight: 300;
+            margin-left: 3px;
+        }
+
+        &.processing {
+            .value {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .processingIndicator {
+                opacity: 1;
+                margin-right: 0;
+            }
+
+            &.withUnit {
+                .processingIndicator {
+                    margin-right: 22px;
+                }
+            }
+        }
+    }
+
+    .processingIndicator {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .disabledControl {
+        cursor: not-allowed;
+
+        * {
+            pointer-events: none;
+        }
+    }
+
+    .control {
+        width: 16px;
+        height: 16px;
+
+        svg path {
+            fill: @C-PRIMARY_GREEN;
+        }
+    }
+}

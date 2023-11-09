@@ -1,0 +1,106 @@
+@import '../variables.less';
+
+.M-MODAL {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    justify-self: center;
+    width: 55vw;
+    height: auto;
+    min-height: 280px;
+    max-width: 95vw;
+    padding: 20px;
+    background: @C-WHITE;
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+    transform: translateZ(0);
+    &:extend(.M-MODAL--FIRST_LEVEL);
+
+    @media @M-MOBILE_TO {
+        max-height: 82vh;
+    }
+
+    @media @M-TABLET_XS_TO {
+        min-width: 265px;
+        padding: 30px 20px;
+        overflow: hidden;
+    }
+}
+
+.M-MODAL--VISIBLE {
+    pointer-events: all;
+    z-index: @Z-MODAL;
+}
+
+.M-MODAL_CLOSE_BUTTON {
+    position: absolute;
+    top: 7px;
+    right: 9px;
+    width: 45px;
+    height: 45px;
+    box-sizing: border-box;
+    display: inline-flex;
+    min-width: unset;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+.M-MODAL--FIRST_LEVEL {
+    padding: 18px;
+}
+
+.M-MODAL--SECOND_LEVEL {
+    padding: 12px 12px;
+}
+
+.M-MODAL_TITLE--FIRST_LEVEL {
+    width: 100%;
+    color: @C-BLACK;
+    text-align: left;
+    font-size: 19px;
+    height: auto;
+    line-height: 1;
+    user-select: none;
+}
+
+.M-MODAL_SUBTITLE {
+    width: 100%;
+    color: @C-BLACK;
+    text-align: left;
+    height: auto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    user-select: none;
+}
+
+.M-MODAL_TITLE--SECOND_LEVEL {
+    width: 100%;
+    color: @C-TEXT;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid @C-GREY_LIGHT;
+    font-size: 13px;
+    height: auto;
+    line-height: 1;
+    user-select: none;
+}
+
+.M-MODAL_CLOSE--FIRST_LEVEL {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    z-index: 99;
+}
+
+.M-MODAL_CLOSE--SECOND_LEVEL {
+    position: absolute;
+    top: 3px;
+    right: 2px;
+    z-index: 99;
+}

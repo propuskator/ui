@@ -1,0 +1,29 @@
+// config for babel import resolvers (VSCODE)
+// https://github.com/tleunen/babel-plugin-module-resolver/blob/master/README.md#editors-autocompletion
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "allowSyntheticDefaultImports": false,
+        "baseUrl": "./",
+        "paths": {
+            "Base/*"         : [ "./src/components/base/*",    "./src/components/base/*/index.js" ],
+            "Shared/*"       : [ "./src/components/shared/*",  "./src/components/shared/*/index.js" ],
+            "Layouts/*"      : [ "./src/components/layouts/*", "./src/components/layouts/*/index.js" ],
+            "Pages/*"        : [ "./src/components/pages/*",   "./src/components/pages/*/index.js" ],
+            "Modals/*"       : [ "./src/components/modals/*",  "./src/components/modals/*/index.js" ],
+            "Constants/*"    : [ "./src/constants/*",          "./src/components/constants/*/index.js" ],
+            "Utils/*"        : [ "./src/utils/*",              "./src/utils/*/index.js" ],
+            "Selectors/*"    : [ "./src/selectors/*",          "./src/selectors/" ],
+            "Actions/*"      : [ "./src/actions/*",            "./src/actions/*/index.js" ],
+            "Context/*"      : [ "./src/context/*",            "./src/context/*/index.js" ],
+            "Assets/*"       : [ "./src/assets/*",             "./src/assets/*/index.js" ],
+            "SmartHome/*"    : [ "./src/smartHome/*",          "./src/actions/*/index.js" ],
+            "ApiSingleton"   : [ "./src/apiSingleton.js" ],
+            "History/*"      : [ "./src/history.js" ],
+            "I18next"        : [ "./src/i18n/" ],
+            "Store/*"        : [ "./src/store/index.js" ],
+            "Config/*"       : [ "./src/config.js" ]
+        }
+    },
+    "exclude": ["node_modules", "build", "builds"]
+}

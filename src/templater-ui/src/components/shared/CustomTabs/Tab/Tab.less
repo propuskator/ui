@@ -1,0 +1,49 @@
+.Tab {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    .tabContent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .indicator {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        bottom: 2px;
+        width: 100%;
+        height: 2px;
+        background: var(--color_primary--600);
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s ease-in-out;
+    }
+
+    &.active {
+        .indicator {
+            opacity: 1;
+        }
+
+        .tabContent {
+            * > {
+                font-weight: 600;
+                color: #1B312F;
+            }
+        }
+
+        &.darkTheme {
+            .tabContent {
+                * > {
+                    color: #EEE;
+                }
+            }
+        }
+    }
+
+    &.fullWidth {
+        width: 100%;
+    }
+}

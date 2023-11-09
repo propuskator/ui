@@ -1,0 +1,41 @@
+@import '../../../assets/variables.less';
+
+.ExpansionPanel {
+    width: 100%;
+
+    .summary {
+        position: relative;
+
+        .arrowWrapper {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-50%);
+            padding: 0;
+            border: 0;
+        }
+
+        .expansionArrow {
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .details {
+        max-height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+
+    &.showDetails {
+        .details {
+            max-height: 500px;
+        }
+
+        .expansionArrow {
+            transform: rotate(180deg);
+        }
+    }
+}

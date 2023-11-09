@@ -1,0 +1,19 @@
+.enter {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+
+    &Active {
+        opacity: 1;
+        transition: opacity 0.3s linear;
+    }
+}
+
+.exit {
+    opacity: 1 !important;
+    transition: opacity 0.3s linear;
+
+    &Active {
+        opacity: 0 !important;
+        transition: opacity 0.3s linear;
+    }
+}

@@ -1,0 +1,45 @@
+.Step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+
+    .content {
+        display: flex;
+        height: 100%;
+        max-height: calc(100% - 52px);
+        border: 1px solid #F0F0F0;
+        margin-bottom: 20px;
+    }
+
+    .textBlk {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+
+    .description {
+        margin-top: 15px;
+        text-align: center;
+        max-width: 80%;
+        color: #3F3F3F;
+        line-height: 150%;
+    }
+
+    .controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .submitBtn {
+        width: auto;
+        margin-left: auto;
+    }
+}

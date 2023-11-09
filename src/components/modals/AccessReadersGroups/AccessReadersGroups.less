@@ -1,0 +1,88 @@
+@import '../../../assets/variables.less';
+@import '../../../assets/mixins.less';
+
+.AccessReadersGroups {
+    &:extend(.M-MODAL); /* stylelint-disable-line */
+    align-items: stretch;
+    position: relative;
+    height: 470px;
+    min-height: 520px;
+    max-height: 100%;
+    background: @C-WHITE;
+
+    &.topModal {
+        &:extend(.M-MODAL--VISIBLE);
+    }
+
+    &.firstLevel {
+        &:extend(.M-MODAL--FIRST_LEVEL);
+        width: @MODAL-WIDTH_FIRST_LEVEL;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--FIRST_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--FIRST_LEVEL);
+        }
+    }
+
+    &.secondLevel {
+        &:extend(.M-MODAL--SECOND_LEVEL);
+        width: @MODAL-WIDTH_SECOND_LEVEL;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--SECOND_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--SECOND_LEVEL);
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .title {
+            margin-bottom: 15px;
+        }
+
+        > * {
+            display: flex;
+            flex-direction: column;
+            min-height: inherit;
+            justify-content: space-between;
+        }
+    }
+
+    .readersGroupWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-left: 10px;
+
+        .chipWrapper {
+            flex-grow: 1;
+            max-width: calc(100% - 70px);
+
+            > * {
+                cursor: text;
+            }
+        }
+
+        .controls {
+            display: flex;
+            padding-right: 2px;
+        }
+    }
+
+    .entityListWrapper {
+        height: calc(100% - 30px);
+        margin-bottom: -5px;
+    }
+}

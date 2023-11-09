@@ -1,0 +1,154 @@
+@import '../../../../assets/variables.less';
+@import '../../../../assets/mixins.less';
+
+.DateRangePickerFilter {
+    position: relative;
+    padding-bottom: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    .datepickerWrapper {
+        display: none;
+    }
+
+    .calendar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: @S-FIELD_HEIGHT;
+        max-height: @S-FIELD_HEIGHT;
+        width: 100%;
+        border: 1px solid @C-INPUT_BORDER;
+        border-radius: 4px;
+        overflow: visible;
+        transition: all 0.3s ease;
+
+        .value {
+            &:extend(.M-VALUE);
+            &:extend(.M-TEXT-OVERFLOW);
+            height: auto;
+            border-radius: 4px;
+            padding-right: @S-ADORNMENT-MARGIN !important;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .calendarLabel {
+            &:extend(.M-LABEL);
+            margin-top: -2px;
+
+            &.selected {
+                &:extend(.M-LABEL--SELECTED);
+            }
+        }
+
+        &:hover {
+            .selected {
+                color: var(--color_primary--500);
+            }
+            border: 1px solid var(--color_primary--500);
+        }
+    }
+
+    .timeLabel {
+        border: none;
+        background-color: @C-WHITE;
+        color: var(--color_primary--500);
+        cursor: pointer;
+        margin: 5px 5px 5px 0;
+        padding: 0;
+        font-size: 10px;
+        padding-bottom: 0;
+        border-bottom: 1px dashed var(--color_primary--500);
+        margin-top: -2px;
+        transition: color 0.3s linear;
+        font-family: @F-FONT_FAMILY;
+        font-weight: normal;
+
+        &:hover,
+        &:focus {
+            color: var(--color_primary--700);
+            border: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &.focused {
+        .calendarLabel {
+            &:extend(.M-LABEL--FOCUSED);
+        }
+    }
+
+    &.focused,
+    &.focusedButton {
+        .calendar {
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -1px;
+                bottom: 0;
+                left: -1px;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 4px;
+                border: @S-FOCUSED_BORDER_WIDTH solid var(--color_primary--500);
+            }
+        }
+    }
+
+    .calendarIconButton {
+        display: block;
+        background: @C-GREY_LIGHT;
+        border-radius: 0 4px 4px 0;
+        height: 100%;
+        width: 33px;
+        transition: all 0.3s ease;
+
+        path {
+            fill: @C-GREY_DARK;
+        }
+
+        &:focus {
+            background-color: @C-GREY_MEDIUM;
+
+            path {
+                fill: @C-WHITE;
+            }
+        }
+
+        @media @M-WITH_HOVER {
+            &:hover {
+                background-color: @C-GREY_MEDIUM;
+
+                path {
+                    fill: @C-WHITE;
+                }
+            }
+        }
+    }
+
+    .clearIconButton {
+        &:extend(.M-CLEAR_BUTTON);
+    }
+
+    .subControls {
+        position: absolute;
+        left: 0;
+        top: 32px;
+
+        .control {
+            background-color: @C-WHITE;
+            padding: 0;
+            margin: 5px 5px 5px 0;
+            margin-top: -2px;
+            margin-right: 20px;
+            font-size: 10px;
+        }
+    }
+}

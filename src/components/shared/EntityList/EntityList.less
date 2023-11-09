@@ -1,0 +1,373 @@
+@import '../../../assets/variables.less';
+@import '../../../assets/mixins.less';
+
+.entityListWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 10px;
+    height: 100%;
+    min-height: 190px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    user-select: none;
+
+    @media @M-TABLET_XS_TO {
+        border: 1px solid transparent !important;
+    }
+
+    &.lightGreen {
+        background: @C-GREEN--100;
+    }
+
+    &.lightYellow {
+        background: @C-YELLOW--100;
+    }
+
+    &.lightViolet {
+        background: @C-VIOLET--100;
+    }
+
+    &.lightRed {
+        background: @C-RED--100;
+    }
+
+    &.lightOrange {
+        background: @C-ORANGE--100;
+    }
+
+    &.lightBlue {
+        background: @C-BLUE--100;
+    }
+
+    &.requiredError {
+        border: 1px solid @C-ERROR !important;
+    }
+
+    &.processing {
+        opacity: @O-FIELD_DISABLED_OPACITY;
+
+        .listWrapper {
+            pointer-events: none !important;
+            cursor: default !important;
+
+            * {
+                pointer-events: none !important;
+                cursor: default !important;
+            }
+        }
+    }
+
+    &.emptyList {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: 100%;
+    }
+
+    &.blurred {
+        .listWrapper {
+            filter: blur(3px);
+            pointer-events: none;
+        }
+    }
+
+    &.sizeS {
+        .emptyListWrapper {
+            svg {
+                width: 40px;
+            }
+
+            .message {
+                margin-top: 10px;
+                font-size: 10px;
+            }
+        }
+    }
+
+    .emptyListWrapper {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        flex-grow: 1;
+        width: 100%;
+        border-radius: 4px;
+        user-select: none;
+
+        .emptyListIcon {
+            width: 46px;
+            height: 61px;
+            margin: 0 auto;
+        }
+
+        .message {
+            width: 95%;
+            font-style: normal;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 14px;
+            text-align: center;
+            margin: 20px auto 0 auto;
+            color: @C-GREY_DARK;
+            white-space: pre-wrap;
+        }
+    }
+
+    .loader {
+        margin-left: 10px;
+    }
+
+    .controls {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 100%;
+        grid-gap: 20px;
+        padding-bottom: 1px;
+        padding-right: 1px;
+
+        .control {
+            outline: none;
+            font-size: 16px;
+            user-select: none;
+        }
+    }
+
+    .searchWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        > div {
+            > div {
+                background: @C-WHITE !important;
+            }
+        }
+    }
+
+    .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 35px;
+        margin-bottom: 10px;
+
+        .title {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .iconButton {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+
+            > span {
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                path {
+                    fill: @C-GREY_MEDIUM;
+                }
+            }
+
+            &:focus {
+                background: @C-GREY_LIGHT;
+            }
+        }
+
+        .createEntityButton {
+            width: 35px;
+            height: 35px;
+            padding: 0;
+            background-color: var(--color_primary--600);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: @S-BOX_SHADOW;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            path {
+                fill: @C-WHITE;
+            }
+
+            @media @M-WITH_HOVER {
+                &:hover {
+                    background: var(--color_primary--700);
+                }
+            }
+        }
+
+        .searchField {
+            flex-grow: 1;
+
+            &.withControls {
+                margin-right: 10px;
+            }
+
+            > div {
+                background-color: @C-WHITE;
+            }
+        }
+    }
+
+    .listWrapper {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        height: calc(100% - 45px);
+        overflow: auto;
+        padding-right: 10px;
+        margin-right: -10px;
+
+        > * {
+            width: 100%;
+        }
+
+        &::-webkit-scrollbar {
+            &:extend(.M-SCROLLBAR); /* stylelint-disable-line */
+        }
+
+        &::-webkit-scrollbar-track {
+            &:extend(.M-SCROLL_TRACK); /* stylelint-disable-line */
+        }
+
+        &::-webkit-scrollbar-thumb {
+            &:extend(.M-SCROLL_THUMB); /* stylelint-disable-line */
+        }
+    }
+
+    .loadMoreIndicator {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        padding: 10px;
+        width: 100%;
+        height: 30px;
+        transform: translateY(-6px);
+    }
+
+    .loaderWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        filter: unset;
+    }
+
+    .list {
+        width: 100%;
+
+        .expansionPanel {
+            margin-bottom: 2px;
+            background: @C-WHITE;
+            border-radius: 4px;
+
+            .addEntityButton {
+                margin: 0 5px;
+                width: 30px;
+                height: 30px;
+                border: none;
+                cursor: pointer;
+                border-radius: 50%;
+
+                svg {
+                    width: 12px;
+                    height: 12px;
+                }
+
+                path {
+                    fill: var(--color_primary--500);
+                }
+
+                &:focus,
+                &:hover {
+                    background-color: @C-GREY_LIGHT;
+                }
+            }
+
+            .chip {
+                cursor: unset;
+                max-width: calc(100% - 95px);
+
+                div {
+                    width: 100%;
+                    line-height: 1.3;
+                    overflow: hidden;
+                    position: relative;
+                }
+            }
+        }
+
+        .summary {
+            display: flex;
+            align-items: center;
+            min-height: 40px;
+            width: 100%;
+            overflow: hidden;
+            background: @C-WHITE;
+            border-radius: 2px;
+            margin-bottom: 2px;
+
+            .chip {
+                max-width: calc(100% - 60px);
+            }
+
+            &.notExpandable {
+                width: 100%;
+                height: auto;
+                background: @C-WHITE;
+                border-radius: 4px;
+                margin-bottom: 2px;
+            }
+
+            &.expandable {
+                width: calc(100% - 30px);
+            }
+
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        .details {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-bottom: 10px;
+            padding-left: 40px;
+            padding-right: 15px;
+
+            .detailsSimpleItem {
+                display: inline-flex;
+                &:extend(.M-TEXT-OVERFLOW);
+                margin-bottom: 4px;
+                margin-right: 4px;
+                width: auto;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

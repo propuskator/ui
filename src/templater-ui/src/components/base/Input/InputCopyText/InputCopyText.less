@@ -1,0 +1,108 @@
+@import '../../../../assets/variables.less';
+
+.InputCopyText.CopyText {
+    opacity: @O-FIELD_DISABLED_OPACITY;
+
+    &.simple {
+        width: auto;
+        max-width: 100%;
+
+        > * {
+            background: transparent !important;
+            padding-left: 0 !important;
+
+            fieldset {
+                border-color: transparent !important;
+                border-width: 1px !important;
+            }
+        }
+
+        label {
+            color: transparent !important;
+        }
+    }
+
+    .input {
+        background: transparent;
+
+        input {
+            background: transparent;
+        }
+    }
+
+    > * {
+        background: @C-INPUT_DISABLED !important;
+
+        fieldset {
+            border-color: rgba(0, 0, 0, 0.15) !important;
+            border-width: 1px !important;
+        }
+    }
+
+    .loaderWrapper {
+        margin-right: 10px;
+    }
+
+    &.withOverflow {
+        textarea {
+            overflow: auto !important;
+            padding-right: 14px;
+        }
+    }
+
+    textarea {
+        overflow: hidden !important;
+        resize: none;
+        margin: 10px 0;
+    }
+
+    label {
+        color: rgba(0, 0, 0, 0.54) !important;
+    }
+
+    .endAdornment {
+        display: inline-flex;
+        align-self: flex-start;
+        width: auto;
+        height: 35px;
+
+        .copyTextButton {
+            > * {
+                background: @C-GREY_MEDIUM !important;
+                border-radius: 0 4px 4px 0;
+                height: 100%;
+                width: 33px;
+            }
+        }
+    }
+}
+
+.tooltip {
+    margin-top: -1px !important;
+}
+
+.SimpleInputCopyText {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 33px;
+
+    .valueWrapper {
+        max-width: calc(100% - 40px);
+
+        .value {
+            user-select: auto !important;
+            &:extend(.M-TEXT-OVERFLOW);
+            pointer-events: all;
+            cursor: text;
+        }
+    }
+
+    .endAdornment {
+        .copyTextButton {
+            > * {
+                background: transparent !important;
+            }
+        }
+    }
+}

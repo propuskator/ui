@@ -1,0 +1,53 @@
+@import '../../../../assets/variables.less';
+
+.StatusForm {
+    flex-grow: 0;
+    height: auto;
+    margin-bottom: 15px;
+
+    > * {
+        width: 100%;
+    }
+
+    .iconWrapper {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+
+        .icon {
+            width: 70px;
+            height: 70px;
+        }
+
+        &.orange {
+            svg path {
+                fill: @C-ORANGE;
+            }
+
+            svg circle {
+                stroke: @C-ORANGE;
+            }
+        }
+
+        &.primaryGreen {
+            svg path {
+                fill: @C-PRIMARY_GREEN;
+            }
+
+            svg circle {
+                stroke: @C-PRIMARY_GREEN;
+            }
+        }
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .description {
+        margin-bottom: 23px;
+        text-align: center;
+        font-weight: 300;
+    }
+}

@@ -1,0 +1,29 @@
+@import '../../../../assets/variables.less';
+
+.PushButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: unset !important;
+    height: 25px !important;
+    width: 56px;
+    padding-left: 0;
+    padding-right: 0;
+    background: @C-GREEN;
+
+    color: @C-WHITE;
+    text-transform: uppercase;
+    border-radius: 8px;
+
+    transition: background .3s ease-in-out;
+
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    > * {
+        font-size: 11px;
+    }
+}

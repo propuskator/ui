@@ -1,0 +1,133 @@
+@import '../../../assets/variables.less';
+@import '../../../assets/mixins.less';
+
+.Camera {
+    &:extend(.M-MODAL); /* stylelint-disable-line */
+    display: flex;
+    align-self: flex-start;
+    justify-content: flex-start;
+    height: 617px;
+    width: 592px;
+    max-width: 100%;
+    background: @C-WHITE;
+    position: relative;
+
+    @media @M-TABLET_XS_TO, @M-MOBILE_LANDSCAPE_TO {
+        align-self: flex-start;
+        height: auto;
+        max-height: unset;
+        width: @MODAL-WIDTH_FIRST_LEVEL;
+        overflow: hidden;
+    }
+
+    &.topModal {
+        &:extend(.M-MODAL--VISIBLE);
+    }
+
+    &.firstLevel {
+        &:extend(.M-MODAL--FIRST_LEVEL);
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--FIRST_LEVEL);
+        }
+    }
+
+    &.secondLevel {
+        &:extend(.M-MODAL--SECOND_LEVEL);
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--SECOND_LEVEL);
+        }
+    }
+
+    .closeButton {
+        transform: translateZ(0);
+    }
+
+    .content {
+        width: 230px;
+        min-height: 218px;
+
+        > * {
+            display: flex;
+            flex-direction: column;
+            min-height: inherit;
+            justify-content: space-between;
+        }
+    }
+
+    .draggableListWrapper {
+        margin-bottom: 0;
+        height: 374px;
+
+        .draggableList {
+            height: 374px;
+        }
+    }
+
+    .mobileList {
+        margin-bottom: -10px;
+
+        .chip {
+            max-width: 145px;
+        }
+
+        > *:first-child {
+            height: 270px;
+        }
+    }
+
+    .chip {
+        max-width: 190px;
+        padding: 4px 4px 4px 8px;
+
+        &.preview {
+            opacity: 0.5;
+        }
+    }
+
+    .reader {
+        display: flex;
+        width: calc(100% - 50px);
+
+        .icon {
+            width: 15px;
+            margin-right: 10px;
+        }
+
+        .label {
+            &:extend(.M-TEXT-OVERFLOW);
+            width: calc(100% - 20px);
+            font-size: 13px;
+            font-weight: 300;
+        }
+    }
+
+    .editableField {
+        min-height: 60px;
+
+        .fieldWrapper {
+            display: inline-flex;
+            align-items: center;
+
+            &:hover {
+                .editableFieldIcon path {
+                    fill: rgba(0, 0, 0, 0.5);
+                }
+
+                .editableFieldText {
+                    color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+
+        .editableFieldText {
+            font-size: 12px;
+        }
+
+        .editableFieldIcon {
+            height: 15px;
+            transition: all 3s ease;
+        }
+    }
+}

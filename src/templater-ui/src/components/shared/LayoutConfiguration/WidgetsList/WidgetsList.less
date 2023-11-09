@@ -1,0 +1,12 @@
+@import '../../../../assets/variables.less';
+
+.draggableItem {
+    > * {
+        outline: none;
+        padding: 2px 6px;
+    }
+}
+
+[data-rbd-draggable-context-id][draggable] {
+    cursor: url('../../../../assets/icons/grab.png') 5 5, grab !important;
+}

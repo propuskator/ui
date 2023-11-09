@@ -1,0 +1,72 @@
+@import '../../../assets/variables.less';
+
+.Base {
+    &:extend(.M-MODAL); /* stylelint-disable-line */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+    min-height: unset;
+    min-width: 100%;
+    max-height: unset;
+    background: @C-WHITE;
+    overflow: auto;
+
+    &.topModal {
+        &:extend(.M-MODAL--VISIBLE);
+    }
+
+    &.firstLevel {
+        &:extend(.M-MODAL--FIRST_LEVEL);
+        width: @MODAL-WIDTH_FIRST_LEVEL;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--FIRST_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--FIRST_LEVEL);
+            top: 11px;
+        }
+    }
+
+    &.secondLevel {
+        &:extend(.M-MODAL--SECOND_LEVEL);
+        width: @MODAL-WIDTH_SECOND_LEVEL;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--SECOND_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--SECOND_LEVEL);
+        }
+    }
+
+    .title {
+        margin-bottom: 16px;
+    }
+
+    .subtitle {
+        &:extend(.M-MODAL_SUBTITLE);
+        margin-bottom: 16px;
+    }
+
+    .customForm {
+        padding-top: 7px;
+        margin-top: -5px;
+        overflow: unset;
+    }
+
+    .content {
+        width: 100%;
+
+        > * {
+            display: flex;
+            flex-direction: column;
+            min-height: 140px;
+            justify-content: space-between;
+        }
+    }
+}

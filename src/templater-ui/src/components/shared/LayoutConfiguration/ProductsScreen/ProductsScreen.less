@@ -1,0 +1,204 @@
+@import '../../../../assets/variables.less';
+
+.ProductScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: @C-WIDGET_BG;
+    z-index: 3;
+
+    .control {
+        svg {
+            width: 10px;
+        }
+    }
+
+    .content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 35px 10px 10px;
+
+        .loaderWrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 92px);
+        }
+
+        .emptyListWrapper {
+            height: 100%;
+            width: 100%;
+            margin-top: -20px;
+            pointer-events: none;
+        }
+    }
+
+    .headingWrapper {
+        .iconsWrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+
+            .headingIcon {
+                width: 15px;
+                cursor: not-allowed;
+            }
+        }
+
+        .headingTitle {
+            margin-bottom: 7px;
+        }
+    }
+
+    .productsList {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: calc(100%);
+        grid-template-columns: 50% 50%;
+
+        .productBlock {
+            position: relative;
+            height: auto;
+            padding: 5px;
+            border-radius: 8px;
+            background: @C-WHITE;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+            @media @M-WITH_HOVER {
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.1);
+                }
+            }
+
+            .deviceStatusWrapper {
+                display: flex;
+                justify-content: flex-end;
+                height: 16px;
+                margin-right: -4px;
+
+                .statusText {
+                    font-size: 10px;
+                }
+            }
+
+            .imageWrapper {
+                position: absolute;
+                top: 14px;
+                left: 5px;
+                width: 35px;
+                height: 35px;
+                margin: 5px 0;
+                overflow: hidden;
+
+                > * {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .fallbackProductIcon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icon {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+
+            .productTitle {
+                height: 16px;
+                font-size: 12px;
+                text-align: left;
+                margin-bottom: 2px;
+                max-width: 90%;
+                margin-top: 35px;
+            }
+        }
+    }
+
+    .menuWrapper {
+        display: flex;
+        height: 55px;
+        padding: 0 2px;
+        background: @C-WHITE;
+        transform: translateY(2px);
+        cursor: not-allowed;
+
+        .menuTab {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 33%;
+            height: 40px;
+            transition: all 0.3s ease;
+
+            &.favorite .icon {
+                height: 11px;
+            }
+
+            .icon {
+                width: 12px;
+                height: 16px;
+                margin-bottom: 2px;
+            }
+
+            .menuTabLabel {
+                font-size: 8px;
+                color: @C-GREY_DARK;
+            }
+
+            &.active {
+                .menuTabLabel {
+                    color: var(--color_primary--700);
+                }
+            }
+        }
+    }
+
+    &.iphoneMode {
+        .menuWrapper {
+            .menuTab {
+                height: 50px;
+            }
+        }
+    }
+
+    &.darkTheme {
+        background: @C-DARK-PRIMARY;
+
+        .productBlock,
+        .menuWrapper {
+            background: @C-DARK-SECONDARY;
+        }
+
+        .headingTitle {
+            color: @C-WHITE;
+        }
+
+        .productTitle {
+            color: @C-WHITE;
+        }
+    }
+}
+
+.tooltip {
+    margin-top: 5px !important;
+}

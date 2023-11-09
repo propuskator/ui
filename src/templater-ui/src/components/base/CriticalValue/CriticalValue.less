@@ -1,0 +1,52 @@
+@import './../../../assets/variables.less';
+
+.CriticalValue {
+    width: auto;
+    user-select: none;
+    font-size: 14px;
+
+    .valueWrapper {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &.breakValue {
+        .valueWrapper {
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+    }
+
+    &.underline {
+        padding: 1px 0;
+        border-bottom: 1px dashed #CACACA;
+        transform: translateY(1px);
+        transition: all 0.3s ease;
+
+        @media @M-WITH_HOVER {
+            &:hover {
+                cursor: pointer;
+                border-bottom: 1px dashed @C-GREY_DARK;
+            }
+        }
+    }
+
+    &.hoverable {
+        @media @M-WITH_HOVER {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.tooltip {
+    margin-top: 5px !important;
+    word-break: break-all;
+    user-select: none;
+
+    &.hide {
+        display: none;
+    }
+}

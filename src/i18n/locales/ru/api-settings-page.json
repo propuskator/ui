@@ -1,0 +1,17 @@
+{
+    "API Settings": "Настройки API",
+    "Access token": "Токен доступа",
+    "Update token": "Обновить токен",
+    "Access token has been updated": "Токен доступа обновлен",
+    "Access token hasn't been updated": "Токен доступа не обновлен",
+    "Update access token": "Обновить токен доступа",
+    "Cancel": "Отменить",
+    "The access token will be updated. You cannot undo this action. Access points added earlier with the current token will stop working.": "Токен доступа будет обновлен. Вы не сможете отменить это действие. Добавленные ранее точки доступа с текущим токеном перестанут работать.",
+    "Certificate": "Сертификат",
+    "Server URL": "URL Сервера",
+    "Broker port": "Порт брокера",
+    "QR code hasn't been downloaded": "QR-код не был загружен",
+    "QR code for subject registration": "QR-код для регистрации субъекта",
+    "QR code": "QR-код",
+    "Deep link for subject registration": "Ссылка для регистрации субъекта"
+}

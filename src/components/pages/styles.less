@@ -1,0 +1,60 @@
+/* Common Page Styles */
+@import '../../assets/variables.less';
+
+.pageContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: calc(100vw - 40px);
+    margin: 0 auto;
+    padding: 20px 20px 10px 20px;
+    overflow: auto;
+
+    .pageTitle {
+        font-weight: 500;
+        padding: 0 10px;
+        user-select: none;
+    }
+
+    @media @M-TABLET_TO, @M-MOBILE_LANDSCAPE_TO {
+        padding: 20px 10px 10px 10px;
+        max-width: 100%;
+    }
+
+    @media @M-TABLET_XS_TO, @M-MOBILE_LANDSCAPE_TO {
+        overflow-y: auto;
+    }
+
+    @media @M-MOBILE_TO, @M-MOBILE_LANDSCAPE_TO {
+        padding: 20px 10px 15px 10px;
+    }
+}
+
+.tableWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    overflow: hidden;
+
+    @media @M-TABLET_TO, @M-MOBILE_LANDSCAPE_TO {
+        padding-right: 0;
+    }
+
+    @media @M-TABLET_XS_TO, @M-MOBILE_LANDSCAPE_TO {
+        overflow: visible;
+    }
+
+    &::-webkit-scrollbar {
+        &:extend(.M-SCROLLBAR); /* stylelint-disable-line */
+    }
+
+    &::-webkit-scrollbar-track {
+        &:extend(.M-SCROLL_TRACK); /* stylelint-disable-line */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        &:extend(.M-SCROLL_THUMB); /* stylelint-disable-line */
+    }
+}

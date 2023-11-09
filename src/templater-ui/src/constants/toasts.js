@@ -1,0 +1,22 @@
+export const TOASTS_KEYS = {
+    accessSettingUpdate        : 'accessSettingUpdate',
+    accessTokenReaderUpdate    : 'accessTokenReaderUpdate',
+    accessTokenReaderDoorState : 'accessTokenReaderDoorState',
+    accessReadersGroupUpdate   : 'accessReadersGroupUpdate',
+    accessScheduleUpdate       : 'accessScheduleUpdate',
+    accessSubjectTokenUpdate   : 'accessSubjectTokenUpdate',
+    acoountSettingsUpdate      : 'acoountSettingsUpdate',
+    apiSettingsUpdate          : 'apiSettingsUpdate',
+    csvAccessLogs              : 'csvAccessLogs',
+    login                      : 'login',
+    fetchError                 : 'fetchError',
+    networkError               : 'networkError',
+    brokerConnectionLost       : 'brokerConnectionLost',
+    devicePropertyValue        : 'devicePropertyValue',
+    csrfError                  : 'csrfError',
+    forbidden                  : 'forbidden',
+    unknownError               : 'unknownError',
+    serverError                : 'serverError',
+    passwordRestore            : 'passwordRestore',
+    widgetUpdate               : 'widgetUpdate'
+};

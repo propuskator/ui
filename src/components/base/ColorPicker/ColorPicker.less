@@ -1,0 +1,92 @@
+@import '../../../assets/variables.less';
+
+.ColorPicker {
+    .title {
+        font-size: 13px;
+        line-height: 15px;
+        user-select: none;
+    }
+
+    .defaultColorsContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        padding-top: 10px;
+
+        .moreButton {
+            width: 28px;
+            height: 28px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: @C-GREY_MEDIUM;
+            color: @C-WHITE;
+            font-size: 10px;
+            line-height: 13px;
+            text-align: center;
+            outline: none;
+            border: none;
+            transition: box-shadow .3s linear;
+
+            &:hover,
+            &:focus {
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            }
+        }
+
+        @media @M-TABLET_XS_TO {
+            max-width: 320px;
+        }
+    }
+}
+
+.colorPalette {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .colorCell {
+        &:focus {
+            border: 1px solid @C-WHITE;
+        }
+    }
+
+    @media @M-TABLET_XS_TO {
+        padding: 14px;
+        width: 320px;
+        height: 189px;
+    }
+}
+
+.colorPaletteLoader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: @C-WHITE;
+    opacity: 70%;
+
+    .loaderWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        filter: unset;
+
+        .loader {
+            transform: scale(0.3);
+        }
+    }
+}

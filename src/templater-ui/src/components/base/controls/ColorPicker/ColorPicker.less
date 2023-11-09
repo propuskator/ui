@@ -1,0 +1,225 @@
+@import '../../../../assets/variables.less';
+
+.disabled {
+    &:hover {
+        cursor: initial;
+    }
+
+    .rail {
+        background: #BDBDBD;
+    }
+}
+
+.ratio-keeper {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+}
+
+.wheel-wrapper {
+    position: relative;
+}
+
+.rcp,
+.rcp div,
+.rcp button {
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.rcp {
+    display: block;
+    transition: transform 0.15s cubic-bezier(0.68, 0, 0.47, 2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &__paletteWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid @C-GREY_MEDIUM;
+
+        &.darkTheme {
+            border: 1px solid @C-DARK-SECONDARY !important;
+        }
+    }
+
+    &__palette {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: 100% 100%;
+        background-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+        border-radius: 50%;
+        will-change: transform, opacity;
+        transition:
+            transform 0.5s cubic-bezier(0.35, 0, 0.25, 1),
+            opacity 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+
+        &.disabled {
+            opacity: 0.6;
+        }
+
+        canvas {
+            border-radius: 50%;
+        }
+
+        &__saturation-cover {
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        &__bg {
+            box-sizing: border-box;
+            position: absolute;
+            width: 76%;
+            height: 76%;
+            top: 12%;
+            left: 12%;
+            border-radius: 50%;
+            pointer-events: none;
+            border: 1px solid @C-GREY_MEDIUM;
+
+            &.darkTheme {
+                border: 1px solid @C-DARK-SECONDARY !important;
+            }
+        }
+    }
+
+    &__rotator {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        cursor: pointer;
+
+        &.darkTheme {
+            border: 1px solid @C-DARK-SECONDARY !important;
+        }
+
+        .dragging & {
+            z-index: 1;
+        }
+    }
+
+    &__knob {
+        border-radius: 50%;
+        position: absolute;
+        width: calc(12% + 2px);
+        height: calc(12% + 2px);
+        left: 50%;
+        margin-left: -13px;
+        background-color: #FFF;
+        transition: transform 0.4s cubic-bezier(0.35, 0, 0.25, 1);
+        outline: 0;
+        border: 1px solid @C-GREY_MEDIUM;
+
+        .disabled & {
+            pointer-events: none;
+        }
+
+        .dragging & {
+            box-shadow: 0 0 0 4px rgba(@C-GREY_MEDIUM, 0.5);
+        }
+    }
+
+    &__well {
+        position: absolute;
+        width: 25%;
+        height: 25%;
+        top: 37.5%;
+        left: 37.5%;
+        padding: 0;
+        margin: 0;
+        border-radius: 50%;
+        outline: 0;
+        overflow: visible;
+        border: 2px solid @C-GREY_MEDIUM;
+
+        &.darkTheme {
+            border: 2px solid @C-DARK-SECONDARY;
+        }
+
+        &::-moz-focus-inner {
+            border: 0;
+        }
+
+        .disabled & {
+            pointer-events: none;
+        }
+    }
+}
+
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    color: #04C0B2;
+}
+
+.saturation {
+    margin: 15px auto 6%;
+    box-sizing: border-box;
+    width: 90%;
+
+    &.disabled {
+        pointer-events: none;
+
+        &:hover {
+            cursor: initial;
+        }
+
+        .rail {
+            background: #BDBDBD;
+        }
+    }
+
+    &.isNotClickable {
+        pointer-events: none;
+    }
+}
+
+/* touchscreens */
+@media (any-pointer: coarse) {
+    .rcp {
+        &__palette__bg {
+            top: 15%;
+            left: 15%;
+            width: 70%;
+            height: 70%;
+        }
+
+        &__knob {/*
+            top: 7.5%;
+            left: 7.5%; */
+
+            width: calc(15% + 2px);
+            height: calc(15% + 2px);
+        }
+    }
+}

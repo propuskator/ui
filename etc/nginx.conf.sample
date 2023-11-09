@@ -1,0 +1,35 @@
+server {
+    listen       3000;
+    server_name  localhost;
+    gzip on;
+    gzip_comp_level 6;
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript;
+
+    ## ADD CACHE RULES
+
+    location ~ config\.js$ {
+        root /admin/build/;
+        try_files $uri $uri =404;
+    }
+
+    location /static/ {
+        expires max;
+        root   /admin/build/;
+        try_files $uri $uri/;
+    }
+
+    location / {
+        root   /admin/build/;
+        index  index.html index.htm;
+
+        expires -1;
+        add_header Cache-Control no-store;
+
+        try_files $uri $uri/ /index.html;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /admin/build/;
+    }
+}

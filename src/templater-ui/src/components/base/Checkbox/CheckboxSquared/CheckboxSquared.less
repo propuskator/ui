@@ -1,0 +1,15 @@
+@import '../../../../assets/variables.less';
+
+.CheckboxSquared {
+    display: inline-flex;
+    align-items: center;
+
+    &.processing {
+        pointer-events: none;
+        opacity: @O-FIELD_DISABLED_OPACITY;
+    }
+
+    .label {
+        margin-left: 10px;
+    }
+}

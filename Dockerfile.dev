@@ -1,0 +1,5 @@
+FROM node:12-alpine
+
+WORKDIR /access-control-admin
+
+CMD npm run config:dev && npm run start:dev

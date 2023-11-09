@@ -1,0 +1,57 @@
+@import '../../../../assets/variables.less';
+
+@C-PRIMARY: var(--color_primary--500);
+
+.WeekDays {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 256px;
+    margin: 0 auto;
+
+    &.processing {
+        pointer-events: none;
+        opacity: @O-FIELD_DISABLED_OPACITY;
+    }
+
+    .dayCell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        text-align: center;
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+        border-radius: 4px;
+        font-family: @F-FONT_FAMILY;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 26px;
+        color: @C-BLACK;
+        border: 1px solid var(--color_primary--500);
+        background: @C-WHITE;
+        outline: 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        &.selected {
+            background: var(--color_primary--500);
+            color: @C-WHITE;
+
+            &.light {
+                opacity: 0.7;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        }
+    }
+}

@@ -1,0 +1,189 @@
+@import "../../../assets/variables.less";
+@import "../../../assets/mixins.less";
+
+.switchWrapper {
+    position: relative;
+
+    .root {
+        justify-content: flex-end;
+        width: 58px !important;
+        height: 38px !important;
+
+        > span:first-child {
+            position: absolute;
+            padding: 9px;
+            width: 38px;
+            height: 38px;
+        }
+    }
+
+    .track {
+        min-width: 34px;
+        width: 34px !important;
+        height: 14px;
+        margin-left: -20px;
+        transition: all 0.3s ease;
+    }
+
+    &.checked {
+        .root {
+            > span:first-child > span:first-child {
+                color: @C-GREEN;
+            }
+
+            > span:first-child {
+                color: @C-GREEN;
+            }
+
+            @media @M-WITH_HOVER {
+                &:hover {
+                    > span:first-child {
+                        background-color: rgba(@C-GREEN, 0.04);
+                    }
+                }
+            }
+        }
+
+        .track {
+            background-color: @C-GREEN !important;
+            margin-left: -20px;
+        }
+
+        .loaderWrapper {
+            position: absolute;
+            top: 11px;
+            right: 11px;
+        }
+    }
+
+    &.unchecked {
+        .root {
+            > span:first-child > span:first-child {
+                color: @C-RED;
+            }
+
+            > span:first-child {
+                color: @C-RED;
+            }
+
+            @media @M-WITH_HOVER {
+                &:hover {
+                    > span:first-child {
+                        background-color: rgba(@C-RED, 0.04);
+                    }
+                }
+            }
+        }
+
+        .track {
+            background-color: @C-RED !important;
+            margin-left: 0;
+        }
+
+        .loaderWrapper {
+            position: absolute;
+            top: 11px;
+            left: 11px;
+        }
+    }
+
+    &.disabled {
+        cursor: not-allowed !important;
+
+        .root {
+            > span:first-child > span:first-child {
+                color: #9E9E9E !important;
+            }
+        }
+
+        .track {
+            background-color: #232323 !important;
+            transition: all 0.3s ease;
+        }
+
+        * {
+            pointer-events: none !important;
+        }
+    }
+
+    &.darkTheme {
+        &.disabled .track {
+            background-color: @C-WHITE !important;
+        }
+    }
+
+    .loaderWrapper {
+        position: absolute;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+
+        &.hidden {
+            opacity: 0;
+        }
+    }
+
+    &.secondary {
+        .root {
+            align-items: center;
+
+            > span:first-child {
+                padding: 4px;
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        .track {
+            min-width: 40px;
+            height: 24px;
+            border-radius: 12px;
+        }
+
+        &.checked {
+            .root {
+                > span:first-child {
+                    transform: translateY(5px) translateX(20px);
+                }
+
+                > span:first-child > span:first-child {
+                    color: @C-WHITE !important;
+                }
+            }
+
+            .track {
+                background-color: @C-PRIMARY_GREEN !important;
+                opacity: 1;
+            }
+
+            &.disabled .track {
+                opacity: 0.3;
+            }
+
+            .loaderWrapper {
+                right: 16px;
+            }
+        }
+
+        &.unchecked {
+            .root {
+                > span:first-child {
+                    transform: translateY(5px) translateX(5px);
+                    color: @C-WHITE !important;
+                }
+
+                > span:first-child > span:first-child {
+                    color: @C-WHITE !important;
+                }
+            }
+
+            .track {
+                background-color: @C-GREY_MEDIUM !important;
+                opacity: 1;
+            }
+
+            &.disabled .track {
+                opacity: 0.3;
+            }
+        }
+    }
+}

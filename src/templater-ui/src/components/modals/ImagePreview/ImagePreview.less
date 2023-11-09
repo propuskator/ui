@@ -1,0 +1,23 @@
+@import '../../../assets/variables.less';
+
+.ImagePreview {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .closeButton {
+        &:extend(.M-MODAL_CLOSE--FIRST_LEVEL);
+        right: 20px;
+    }
+
+    .image {
+        max-height: 90vh;
+        max-width: 90vw;
+        height: auto;
+        width: 100%;
+    }
+}

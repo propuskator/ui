@@ -1,0 +1,46 @@
+@import '../../../../assets/variables.less';
+
+.tagTooltip {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    word-break: break-all;
+    white-space: pre-line;
+
+    .tooltipIcon {
+        width: 18px;
+        height: 18px;
+        padding: 2px;
+        margin-right: 5px;
+        flex-shrink: 0;
+
+        > path {
+            fill: @C-WHITE;
+        }
+    }
+}
+
+.switchWrapper {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.chip {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    max-width: 135px;
+}
+
+.chipSubjectExpandControl {
+    div {
+        font-size: 11px;
+    }
+}
+
+.chipSubject {
+    max-width: 150px !important;
+}

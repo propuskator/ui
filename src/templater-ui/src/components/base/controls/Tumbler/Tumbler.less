@@ -1,0 +1,152 @@
+@import '../../../../assets/variables.less';
+
+.tumblerWrapper {
+    position: relative;
+
+    .loaderWrapper {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        transform: translate(-75%, -25%);
+        z-index: 2;
+        cursor: not-allowed;
+    }
+}
+
+.Tumbler {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 64px;
+    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: @C-WIDGET_CONTROL_BG;
+    border: 2px solid @C-WIDGET_CONTROL_BG;
+
+    .sectionOn,
+    .sectionOff {
+        position: relative;
+        height: 100%;
+        flex: 1;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .sectionOff {
+        background: @C-WHITE;
+        box-shadow: @C-ACTIVE_WIDGET_SHADOW;
+
+        &::before {
+            content: none;
+        }
+
+        &::after {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #1B312F;
+        }
+    }
+
+    .sectionOn {
+        box-shadow: none;
+
+        &::after {
+            width: 10px;
+            height: 1px;
+            background: @C-GREY_DARK_4;
+        }
+    }
+
+    &.active {
+        .sectionOff {
+            background: transparent;
+            box-shadow: none;
+
+            &::after {
+                border: 1px solid #8D9796;
+            }
+        }
+
+        .sectionOn {
+            background: @C-WHITE;
+            box-shadow: @C-ACTIVE_WIDGET_SHADOW;
+
+            &::after {
+                background: @C-ACTIVE_WIDGET;
+            }
+        }
+    }
+
+    &.disabled,
+    &.processing {
+        cursor: not-allowed;
+        opacity: .6;
+    }
+
+    &.disabled {
+        .sectionOff {
+            &::after {
+                border: 1px solid @C-DISABLED_WIDGET;
+            }
+        }
+
+        .sectionOn {
+            &::after {
+                background: @C-ACTIVE_WIDGET;
+            }
+        }
+    }
+
+    &.darkTheme {
+        background: rgba(29, 33, 42, 0.2);
+        border: 1px solid @C-GREY_DARKEST;
+
+        .option.selected {
+            background: @C-DARK-PRIMARY;
+        }
+
+        .sectionOff {
+            background: @C-GREY_DARKEST;
+
+            &::after {
+                border: 1px solid @C-WHITE;
+            }
+        }
+
+        .sectionOn {
+            &::after {
+                background: @C-WHITE;
+            }
+        }
+
+        &.active {
+            .sectionOff {
+                background: transparent;
+
+                &::after {
+                    border: 1px solid @C-GREY_MEDIUM;
+                }
+            }
+
+            .sectionOn {
+                background: @C-GREY_DARKEST;
+
+                &::after {
+                    background: @C-ACTIVE_WIDGET;
+                }
+            }
+        }
+    }
+}

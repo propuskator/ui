@@ -1,0 +1,44 @@
+@import '../../../../../assets/variables.less';
+
+.ViewWidgetScreen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        &:extend(.M-SCROLLBAR);
+    }
+
+    &::-webkit-scrollbar-track {
+        &:extend(.M-SCROLL_TRACK);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        &:extend(.M-SCROLL_THUMB);
+    }
+
+    .widgetCentered {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .chart {
+        flex-grow: 1;
+        height: 210px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    &.darkTheme {
+        &:extend(.M-SCROLLBAR-DARK-FF);
+
+        &::-webkit-scrollbar-thumb {
+            &:extend(.M-SCROLL_THUMB_DARK);
+        }
+    }
+}

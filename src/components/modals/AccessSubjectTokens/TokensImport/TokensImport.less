@@ -1,0 +1,71 @@
+@import '../../../../assets/variables.less';
+
+.TokensImport {
+    .dropzone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        border: 2px dashed transparent;
+        border-radius: 5px;
+        flex: 1;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.drag {
+            border: 2px dashed #B8B8B8;
+
+            & > * {
+                opacity: .4;
+            }
+        }
+    }
+
+    .filePreview {
+        display: flex;
+        align-items: center;
+    }
+
+    .removeFileIcon {
+        margin-right: 4px;
+
+        svg path {
+            fill: @C-GREEN;
+        }
+    }
+
+    .fileName {
+        font-size: 22px;
+        text-align: center;
+        word-break: break-all;
+    }
+
+    .selectFileBtn {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .uploadError {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        color: @C-RED;
+    }
+
+    .inputUpload {
+        position: absolute;
+        display: none;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 150%;
+        height: 150%;
+        margin: -50%;
+        opacity: 0;
+    }
+}

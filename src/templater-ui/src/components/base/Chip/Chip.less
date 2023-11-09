@@ -1,0 +1,285 @@
+@import '../../../assets/variables.less';
+
+@C-MAIN_COLOR: #EBEBEF;
+
+.Chip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    justify-content: space-between;
+    max-width: 150px;
+    padding: 5px 8px 6px 8px;
+    background: @C-MAIN_COLOR;
+    border-radius: @S-BORDER_RADIUS;
+    cursor: unset;
+    outline: none;
+    text-decoration: none;
+    box-shadow: @S-BOX_SHADOW;
+    transition: background 0.3s ease;
+
+    &.withBackground {
+        border: unset;
+
+        .label {
+            color: @C-WHITE !important;
+        }
+
+        .deleteButton {
+            svg {
+                color: @C-WHITE;
+            }
+
+            &:hover {
+                background: rgba(240, 240, 240, 0.4);
+            }
+        }
+    }
+
+    &.archived {
+        &.withoutBackground {
+            border: 1px solid  @C-ARCHIVED_ENTITY !important;
+            background: @C-WHITE !important;
+
+            .label {
+                color: rgba(@C-BLACK, 0.65) !important;
+            }
+        }
+
+        &.withBackground {
+            opacity: 0.4;
+
+            .label {
+                color: @C-WHITE !important;
+            }
+        }
+    }
+
+    .label {
+        &:extend(.M-TEXT-OVERFLOW);
+        position: relative;
+        display: block !important;
+        align-items: center;
+        height: auto;
+        line-height: 1.5;
+        font-weight: 300;
+        color: @C-BLACK !important;
+        pointer-events: all;
+
+        * {
+            color: @C-BLACK;
+        }
+    }
+
+    .invisibleBlock {
+        position: absolute !important;
+        min-width: 100%;
+        min-height: 100%;
+        white-space: nowrap;
+        opacity: 0;
+        width: auto !important;
+        user-select: none;
+        pointer-events: none;
+        overflow: visible;
+    }
+
+    &.sizeS {
+        height: 18px;
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+
+    &.sizeM {
+        height: 22px;
+        font-size: 13px;
+    }
+
+    &.sizeL {
+        line-height: 1.5;
+        height: 24px;
+        font-size: 15px;
+    }
+
+    &.sizeXL {
+        line-height: 1.5;
+        height: 26px;
+        font-size: 15px;
+    }
+
+    &.sizeXXL {
+        line-height: 1.5;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    @media @M-WITH_HOVER {
+        &.hoverable {
+            cursor: pointer !important;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+
+    &.white {
+        background: @C-WHITE;
+        color: @C-BLACK;
+
+        div {
+            color: @C-BLACK;
+        }
+    }
+
+    &.blue {
+        background: @C-BLUE;
+        border-color: @C-BLUE;
+    }
+
+    &.blue.outlined {
+        background: @C-WHITE;
+        border-color: @C-BLUE;
+    }
+
+    &.accessSchedule {
+        background: @C-WHITE;
+        border: 1px solid @C-ORANGE--400;
+
+        div {
+            color: @C-BLACK;
+        }
+    }
+
+    &.yellow.filled {
+        background: @C-YELLOW;
+        border-color: @C-YELLOW;
+    }
+
+    &.yellow.outlined {
+        border: 1px solid @C-YELLOW;
+
+        div {
+            color: @C-BLACK;
+        }
+    }
+
+    &.red {
+        background: @C-RED;
+        border-color: @C-RED;
+    }
+
+    &.green {
+        background: @C-GREEN--LIGHT;
+        border-color: @C-GREEN--LIGHT;
+    }
+
+    &.green.outlined {
+        border: 1px solid @C-GREEN--LIGHT;
+
+        div {
+            color: @C-BLACK;
+        }
+    }
+
+    &.grey {
+        background: @C-GREY_MEDIUM;
+        border-color: @C-GREY_MEDIUM;
+    }
+
+    &.pink {
+        background: @C-PINK;
+        border-color: @C-PINK_DARK;
+    }
+
+    &.pink.filled {
+        background: @C-PINK;
+        border-color: @C-PINK_DARK;
+        border: 1px solid @C-PINK_DARK;
+
+        div {
+            color: @C-BLACK;
+        }
+    }
+
+    &.pink.outlined {
+        border: 1px solid @C-PINK_DARK;
+
+        div {
+            color: @C-BLACK;
+        }
+    }
+
+    &.mediumGrey {
+        background: @C-GREY_MEDIUM;
+    }
+
+    &.mediumGrey.outlined {
+        border: 1px solid @C-GREY_MEDIUM;
+
+        * {
+            color: @C-GREY_MEDIUM;
+        }
+    }
+
+    &.disabled {
+        pointer-events: none !important;
+        opacity: 0.5;
+        cursor: default !important;
+
+        > * {
+            pointer-events: none !important;
+        }
+    }
+
+    .deleteButton {
+        pointer-events: all !important;
+        color: @C-GREY_MEDIUM;
+        padding: 0 2px;
+        width: 16px;
+        height: 16px;
+        margin-left: 7px;
+        cursor: pointer !important;
+
+        * {
+            pointer-events: none;
+        }
+
+        svg {
+            width: 12px;
+            height: 12px;
+            color: @C-BLACK;
+        }
+
+        span + span {
+            span {
+                background: rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    &.button {
+        border: none;
+
+        > * {
+            line-height: 1.1;
+            user-select: none;
+        }
+
+        &.sizeS {
+            padding: 0 6px;
+
+            * {
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+.button {
+    padding: 4px 8px;
+}

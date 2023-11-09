@@ -1,0 +1,162 @@
+@import '../../../assets/variables.less';
+
+.APISettings {
+    width: 100%;
+    height: 100%;
+
+    .pageTitle {
+        margin-top: 8px;
+        margin-bottom: 30px;
+        user-select: none;
+
+        @media @M-MOBILE_L_TO, @M-MOBILE_LANDSCAPE_TO {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    &.blurred {
+        pointer-events: none !important;
+
+        .content {
+            filter: blur(3px);
+            pointer-events: none !important;
+        }
+    }
+
+    .content {
+        display: flex;
+        margin-bottom: 15px;
+        width: calc(100% - 15px);
+        max-width: 1800px;
+        padding: 0 10px;
+
+        @media @M-DESKTOP_L_TO {
+            width: 100%;
+        }
+
+        .formWrapper {
+            width: calc(50% - 10px);
+            min-width: calc(50% - 10px);
+            position: relative;
+            padding: 20px;
+            margin-right: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+
+            @media @M-DESKTOP_TO {
+                width: 100%;
+                max-width: 580px;
+            }
+        }
+
+        .registrationLinksBlock {
+            min-width: calc(50% - 10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            * > {
+                max-width: 100%;
+                user-select: none;
+            }
+
+            .qrCodeWrapper {
+                display: inline-block;
+                width: 228px;
+                height: 228px;
+            }
+
+            .deepLink {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .downloadIcon {
+                margin: 0 0 15px 5px;
+
+                path {
+                    fill: var(--color_primary--500);
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    path {
+                        fill: var(--color_primary--700) !important;
+                    }
+                }
+
+                &.disabled {
+                    &:hover {
+                        cursor: default;
+
+                        path {
+                            fill: var(--color_primary--500) !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .subtitle {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 0;
+            font-weight: 400;
+
+            .copyTextButton {
+                margin-left: 5px;
+            }
+        }
+
+        .value {
+            max-width: 100%;
+            user-select: text !important;
+        }
+
+        .infoBlock {
+            margin-bottom: 15px;
+
+            &.tokenField {
+                margin-bottom: 5px;
+            }
+
+            &:last-child {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .loaderWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .formControls {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .refreshButton {
+            width: 251px;
+
+            @media @M-TABLET_XS_TO {
+                width: 100%;
+            }
+        }
+    }
+
+    .controlLink {
+        font-size: 12px;
+        margin-bottom: 7px;
+    }
+}

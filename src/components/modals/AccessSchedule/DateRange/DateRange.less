@@ -1,0 +1,49 @@
+@import '../../../../assets/variables.less';
+
+.DateRange {
+    .subtitle {
+        margin: 10px 0;
+        text-align: center;
+
+        &.withIcon {
+            margin: 2px 0;
+        }
+    }
+
+    .calendarIconButton {
+        margin-left: 5px !important;
+        pointer-events: all !important;
+    }
+
+    .timeRangeStartFieldWrapper,
+    .timeRangeEndFieldWrapper {
+        margin-bottom: 3px;
+    }
+
+    .datesWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 -12px 10px -12px;
+
+        > * {
+            width: calc(50% - 3px);
+        }
+    }
+
+    .rangeFieldsWrapper {
+        @media @M-TABLET_XS_FROM {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: -10px;
+
+            > * {
+                width: calc(50% - 5px);
+            }
+        }
+    }
+
+    .calendarWrapper {
+        display: none;
+    }
+}

@@ -1,0 +1,6 @@
+public/static/*.js
+webpack.config.js
+webpack-production.config.js
+server.js
+src/components/modals/CameraStream/jsmpeg.min.js
+src/templater-ui/*

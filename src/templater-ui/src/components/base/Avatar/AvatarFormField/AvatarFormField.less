@@ -1,0 +1,311 @@
+@import '../../../../assets/variables.less';
+
+.AvatarFormField {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+    .title {
+        user-select: none;
+    }
+
+    &.disabled {
+        pointer-events: none;
+
+        * {
+            pointer-events: none;
+        }
+    }
+
+    &.processing {
+        .avatarWrapper {
+            opacity: @O-FIELD_DISABLED_OPACITY;
+
+            .loadButton {
+                cursor: default;
+            }
+        }
+    }
+
+    &.withImage {
+        &.processing {
+            .avatarWrapper {
+                opacity: 1;
+
+                .icon {
+                    opacity: 0;
+                }
+            }
+
+            .avatarPreview {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &.secondaryPicture {
+        .avatarWrapper {
+            .icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        &.sizeXL {
+            .avatarWrapper {
+                width: 200px;
+                height: 95px;
+
+                .icon {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+        }
+    }
+
+    &.primaryPicture {
+        .avatarWrapper {
+            .icon {
+                width: 75px;
+                height: 75px;
+
+                path {
+                    fill: var(--color_icon);
+                }
+            }
+        }
+    }
+
+    .loaderWrapper {
+        position: absolute;
+        top: -6%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.withLabel {
+        justify-content: space-between;
+
+        &.topLabel {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .title {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    &.square {
+        .avatarWrapper {
+            border-radius: 0;
+        }
+
+        .loadButton {
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        &.sizeM {
+            .avatarWrapper {
+                width: 95px;
+                height: 95px;
+            }
+        }
+    }
+
+    &.sizeL {
+        .avatarWrapper {
+            width: 100px;
+            height: 100px;
+
+            .icon {
+                width: 35px;
+                height: 32px;
+            }
+        }
+
+        .loaderWrapper {
+            top: -10%;
+
+            > * {
+                transform: translateZ(0) scale(0.28);
+            }
+        }
+    }
+
+    &.sizeXL {
+        .avatarWrapper {
+            width: 200px;
+            height: 100px;
+
+            .icon {
+                width: 35px;
+                height: 32px;
+            }
+        }
+
+        .loaderWrapper {
+            top: -10%;
+
+            > * {
+                transform: translateZ(0) scale(0.28);
+            }
+        }
+    }
+
+    &.sizeXXL {
+        .avatarWrapper {
+            width: 180px;
+            height: 180px;
+
+            .icon {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .loaderWrapper {
+            top: -2%;
+
+            > * {
+                transform: translateZ(0) scale(0.28);
+            }
+        }
+    }
+
+    &.sizeM {
+        .loadButton {
+            font-size: 7px;
+            height: 20px;
+
+            @media @M-MOBILE_TO {
+                height: 22px;
+                font-size: 9px;
+            }
+        }
+    }
+
+    .avatarWrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 75px;
+        height: 75px;
+        background: @C-GREY_LIGHT;
+        transition: all 0.3s ease;
+        border-radius: 50%;
+        overflow: hidden;
+        transform: translateZ(0);
+
+        &.touchScreen {
+            .loadButton {
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+        }
+
+        @media @M-MOBILE_TO {
+            width: 100px;
+            height: 100px;
+
+            .icon {
+                width: 34px;
+                height: 33px;
+            }
+
+            .loaderWrapper {
+                top: -6%;
+
+                > * {
+                    transform: translateZ(0) scale(0.28);
+                }
+            }
+        }
+
+        @media @M-WITH_HOVER {
+            &:hover {
+                .loadButton {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .icon {
+            width: 24px;
+            height: 20px;
+            transition: opacity 0.3s ease;
+
+            path {
+                fill: @C-GREY_DARK;
+            }
+        }
+    }
+
+    .loadButton {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 25px;
+        padding-top: 2px;
+        padding-bottom: 5px;
+        font-size: 10px;
+        text-align: center;
+        background: var(--color_primary--500);
+        color: @C-WHITE;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+        outline: 0;
+        border: 0;
+
+        @media @M-MOBILE_TO {
+            height: 20px;
+            font-size: 9px;
+        }
+    }
+
+    .inputTypeFile {
+        position: absolute;
+        display: none;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 150%;
+        height: 150%;
+        margin: -50%;
+        opacity: 0;
+    }
+
+    .avatarPreview {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.3s ease;
+    }
+}
+
+.dropdownLabel {
+    text-align: center;
+}
+
+.menuItem {
+    min-height: 35px;
+    height: auto !important;
+
+    > * {
+        white-space: break-spaces !important;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}

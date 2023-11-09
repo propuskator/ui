@@ -1,0 +1,47 @@
+@import '../../../assets/variables.less';
+
+.IconButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0 !important;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+
+    * {
+        pointer-events: none;
+    }
+
+    &.disableRipple {
+        background: transparent !important;
+
+        * {
+            background: transparent !important;
+        }
+    }
+
+    @media @M-WITH_HOVER {
+        cursor: pointer;
+
+        &:hover {
+            background: @C-GREY_LIGHT;
+        }
+    }
+
+    &.sizeS {
+        width: 20px;
+        height: 20px;
+    }
+
+    &.sizeM {
+        width: 35px;
+        height: 35px;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        cursor: default;
+    }
+}

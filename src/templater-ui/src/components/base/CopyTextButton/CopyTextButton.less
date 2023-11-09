@@ -1,0 +1,72 @@
+@import '../../../assets/variables.less';
+
+.CopyTextButton {
+    pointer-events: all;
+
+    > * {
+        background: transparent !important;
+    }
+
+    &.primary500 {
+        .copyIconButton {
+            path {
+                fill: var(--color_primary--500) !important;
+            }
+
+            @media @M-WITH_HOVER {
+                &:hover {
+                    path {
+                        fill: var(--color_primary--700) !important;
+                    }
+                }
+            }
+
+            &:focus {
+                path {
+                    fill: var(--color_primary--700) !important;
+                }
+            }
+        }
+    }
+
+    &.grey {
+        .copyIconButton {
+            background: @C-GREY_LIGHT !important;
+
+            path {
+                fill: @C-GREY_DARK !important;
+            }
+
+            @media @M-WITH_HOVER {
+                &:hover {
+                    background-color: @C-GREY_MEDIUM !important;
+
+                    path {
+                        fill: @C-WHITE !important;
+                    }
+                }
+            }
+
+            &:focus {
+                background-color: @C-GREY_MEDIUM !important;
+
+                path {
+                    fill: @C-WHITE !important;
+                }
+            }
+        }
+    }
+
+    .copyIconButton {
+        display: block;
+        border-radius: 50%;
+        height: 33px;
+        width: 33px;
+        transition: all 0.3s ease;
+
+        svg {
+            width: 16px;
+            height: 22px;
+        }
+    }
+}

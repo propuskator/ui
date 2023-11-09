@@ -1,0 +1,129 @@
+@import '../../../assets/variables.less';
+
+/* stylelint-disable */
+@keyframes loader {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+.loader div {
+  left: 50%;
+  top: 40%;
+  position: absolute;
+  animation: loader linear 1s infinite;
+  width: 10px;
+  height: 30px;
+  border-radius: 5px 6px;
+  transform-origin: 5px 55px;
+}
+
+.loader div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -0.875s;
+}
+
+.loader div:nth-child(2) {
+  transform: rotate(45deg);
+  animation-delay: -0.75s;
+}
+
+.loader div:nth-child(3) {
+  transform: rotate(90deg);
+  animation-delay: -0.625s;
+}
+
+.loader div:nth-child(4) {
+  transform: rotate(135deg);
+  animation-delay: -0.5s;
+}
+
+.loader div:nth-child(5) {
+  transform: rotate(180deg);
+  animation-delay: -0.375s;
+}
+
+.loader div:nth-child(6) {
+  transform: rotate(225deg);
+  animation-delay: -0.25s;
+}
+
+.loader div:nth-child(7) {
+  transform: rotate(270deg);
+  animation-delay: -0.125s;
+}
+
+.loader div:nth-child(8) {
+  transform: rotate(315deg);
+  animation-delay: 0s;
+}
+
+.loadingio-spinner-spinner-x8vddvy5kz {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  background: none;
+  margin: auto;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+
+.loaderWrapper {
+  width: 100%;
+  height: 100%;
+
+  &.primary {
+    .loader div {
+      background: var(--color_primary--700);
+    }
+  }
+
+  &.white {
+    .loader div {
+      background: @C-WHITE;
+    }
+  }
+
+  &.grey {
+    .loader div {
+      background: @C-GREY_DARK;
+    }
+  }
+
+  &.red {
+    .loader div {
+      background: @C-RED;
+    }
+  }
+}
+
+.sizeXXS {
+  transform: translateZ(0) scale(.15);
+}
+.sizeXS {
+  transform: translateZ(0) scale(.18);
+}
+.sizeS {
+  transform: translateZ(0) scale(.3);
+}
+.sizeM {
+  transform: translateZ(0) scale(.5);
+}
+.sizeL {
+  transform: translateZ(0) scale(.7);
+}
+.sizeXL {
+  transform: translateZ(0) scale(1);
+}
+
+.loader div {
+  box-sizing: content-box;
+}
+
+/* stylelint-enable */

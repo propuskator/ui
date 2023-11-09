@@ -1,0 +1,38 @@
+@import '../../../../../assets/variables.less';
+
+.ColorPickerPreview {
+    transition: all 0.3s ease;
+
+    &.processing {
+        pointer-events: none;
+        opacity: @O-FIELD_DISABLED_OPACITY;
+    }
+
+    .colorPreview {
+        position: relative;
+        display: block;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        &.invalid {
+            border: unset;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 300;
+        }
+    }
+}
+
+.tooltip {
+    margin-top: 5px !important;
+    word-break: break-all;
+    user-select: none;
+
+    &.hide {
+        display: none;
+    }
+}

@@ -1,0 +1,47 @@
+@import '../../../assets/variables.less';
+
+.CircularProgress {
+    pointer-events: none;
+    color: @C-GREY_DARK;
+    width: 15px !important;
+    height: 15px !important;
+
+    &.white {
+        svg circle {
+            stroke: @C-WHITE;
+        }
+    }
+
+    &.greyDark {
+        svg circle {
+            stroke: @C-GREY_DARK;
+        }
+    }
+
+    &.sizeXS {
+        width: 10px !important;
+        height: 10px !important;
+
+        svg {
+            width: 10px !important;
+            height: 10px !important;
+        }
+    }
+
+    &.sizeS {
+        svg {
+            width: 15px !important;
+            height: 15px !important;
+        }
+    }
+
+    &.sizeFull {
+        width: 100% !important;
+        height: 100% !important;
+
+        svg {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+}

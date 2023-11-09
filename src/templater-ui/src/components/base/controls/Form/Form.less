@@ -1,0 +1,93 @@
+@import '../../../../assets/variables.less';
+
+.Form {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+
+    .inputField {
+        margin-right: 10px;
+
+        input {
+            font-size: 14px !important;
+            padding-left: 10px !important;
+        }
+    }
+
+    .submitButtonWrapper {
+        position: relative;
+
+        .loaderWrapper {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            transition: all 0.3s ease 0.3s;
+
+            &.hidden {
+                opacity: 0;
+            }
+        }
+    }
+
+    .submitButton {
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        background-color: var(--color_primary--600) !important;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        box-shadow: @S-BOX_SHADOW;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            transition: all 0.3s ease 0.3s;
+        }
+
+        path {
+            fill: @C-WHITE;
+        }
+
+        @media @M-WITH_HOVER {
+            &:hover {
+                background: var(--color_primary--700) !important;
+            }
+        }
+    }
+
+    .unitField {
+        margin-right: 10px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &.processing {
+        .submitButtonWrapper {
+            pointer-events: none;
+        }
+
+        .submitButton {
+            opacity: @O-FIELD_DISABLED_OPACITY;
+
+            svg {
+                opacity: 0;
+            }
+        }
+
+        .unitField {
+            opacity: @O-FIELD_DISABLED_OPACITY;
+        }
+    }
+
+    .errorMsg {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+}

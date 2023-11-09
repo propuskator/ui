@@ -1,0 +1,22 @@
+@import '../../../../assets/variables.less';
+
+.Report {
+    .text {
+        margin: 22px 0 22px;
+    }
+
+    .submitButton {
+        width: 190px;
+
+        @media @M-TABLET_XS_TO {
+            width: 100%;
+        }
+    }
+
+    &.controlsToright {
+        .submitButton {
+            margin-right: 0;
+            margin-left: auto;
+        }
+    }
+}

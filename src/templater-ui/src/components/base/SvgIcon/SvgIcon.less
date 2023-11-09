@@ -1,0 +1,155 @@
+@import '../../../assets/variables.less';
+
+.SvgIcon {
+    display: inline-flex;
+
+    &.default path {
+        fill: var(--color_icon);
+    }
+
+    &.clickable {
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+
+        @media @M-WITH_HOVER {
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    &.primary900 path {
+        fill: var(--color_primary--900);
+    }
+
+    &.primary700 path {
+        fill: var(--color_primary--700);
+    }
+
+    &.primary600 path {
+        fill: var(--color_primary--600);
+    }
+
+    &.primary500 path {
+        fill: var(--color_primary--500);
+    }
+
+    &.greyLight path {
+        fill: @C-GREY_LIGHT;
+    }
+
+    &.greyMedium path {
+        fill: @C-GREY_MEDIUM;
+    }
+
+    &.greyDark path {
+        fill: @C-GREY_DARK;
+    }
+
+    &.white path {
+        fill: @C-WHITE;
+    }
+
+    &.black {
+        path {
+            fill: @C-BLACK;
+        }
+
+        &.clickable {
+            @media @M-WITH_HOVER {
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    &.yellow * {
+        fill: #ECCF39;
+    }
+
+    &.red {
+        * {
+            fill: @C-RED;
+        }
+    }
+
+    &.green * {
+        fill: @C-GREEN;
+    }
+
+    &.primaryGreen * {
+        fill: @C-PRIMARY_GREEN;
+    }
+
+    &.darkOrange {
+        fill: #FF8368;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    &.theme {
+        width: 18px;
+        height: 18px;
+    }
+
+    &.logo path {
+        fill: #04C0B2;
+    }
+
+    &.plusButton path {
+        fill: var(--color_primary--500);
+    }
+
+    &.arrowDownFilled {
+        width: 24px;
+        height: 24px;
+
+        path {
+            fill: rgba(0, 0, 0, 0.54);
+        }
+    }
+
+    &.check {
+        path {
+            fill: #02BDAF;
+        }
+    }
+
+    &.successGreen,
+    &.userRegistrationRequest {
+        path {
+            fill: #02BD4D;
+        }
+    }
+
+    &.errorRed {
+        path {
+            fill: #D63125;
+        }
+    }
+
+    &.user {
+        background: @C-WHITE;
+        border-radius: 50%;
+    }
+
+    &.unzip,
+    &.zip {
+        width: 18px;
+    }
+
+    &.arrowRightThin {
+        width: 12px;
+        height: 12px;
+    }
+
+    &.orange {
+        path {
+            fill: @C-ORANGE;
+        }
+    }
+}

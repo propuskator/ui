@@ -1,0 +1,46 @@
+@import '../../../../assets/variables.less';
+
+.List {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.dropdownWrapper {
+    .dropdownInput {
+        height: 28px;
+        min-height: 28px;
+        padding: 0 10px !important;
+    }
+
+    .dropdownInputWrapper {
+        height: 28px;
+        min-height: 28px;
+    }
+
+    .dropdownValueWrapper,
+    .dropdownSelectedValue {
+        padding: 0 25px 0 7px !important;
+    }
+
+    .dropdownLabelWrapper {
+        display: flex;
+        align-items: center;
+        padding: 0 !important;
+    }
+
+    .dropdownSelectedValue {
+        pointer-events: all;
+    }
+}
+
+.dropdownMenu {
+    position: absolute !important;
+
+    .dropdownMenuItem {
+        border-bottom: 1px solid @C-GREY_LIGHT;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}

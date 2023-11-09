@@ -1,0 +1,159 @@
+@import '../../../../assets/variables.less';
+
+.TokensReading {
+    .list {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 7px;
+        padding-top: 30px;
+
+        @media @M-TABLET_TO {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .listHeader {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px 15px 30px;
+            margin-right: 42px;
+
+            @media @M-TABLET_TO {
+                margin-right: 20px;
+            }
+        }
+
+        .headerCell {
+            display: inline-flex;
+            padding-right: 5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #A2ADAC;
+
+            &:last-child {
+                padding-right: 0;
+                justify-content: flex-end;
+            }
+        }
+
+        .listBody {
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            padding-right: 38px;
+
+            @media @M-TABLET_TO {
+                padding-right: 0;
+            }
+        }
+
+        .rowWrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            background: #F4F9F8;
+            margin-bottom: 5px;
+            padding: 11px 20px 11px 30px;
+        }
+
+        .cell {
+            display: inline-flex;
+            padding-right: 15px;
+
+            @media @M-MOBILE_TO {
+                padding-right: 10px;
+            }
+
+            &:last-child {
+                justify-content: flex-end;
+                padding-right: 0;
+            }
+        }
+
+        .nameText,
+        .cell {
+            color: #2F2F2F;
+            font-size: 16px;
+            min-width: 33px;
+            min-height: 16px;
+        }
+
+        .cell,
+        .headerCell {
+            &:nth-child(1),
+            &:nth-child(2) {
+                width: 40%;
+
+                @media @M-MOBILE_TO {
+                    width: 45%;
+                }
+            }
+
+            &:nth-child(3) {
+                width: 20%;
+
+                @media @M-MOBILE_TO {
+                    width: 10%;
+                }
+            }
+        }
+    }
+
+    .addManually {
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: @C-GREY_DARK;
+    }
+
+    .addManuallyIcon {
+        margin-right: 10px;
+    }
+
+    .inputField {
+        height: 30px;
+        min-height: 30px;
+    }
+
+    .input {
+        padding-right: 10px !important;
+    }
+
+    .inputBtn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .actionIcon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .tokenError {
+        font-size: 12px;
+        line-height: 14px;
+        color: @C-RED;
+        padding-bottom: 6px;
+
+        @media @M-TABLET_TO {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+
+    .importBtn {
+        font-size: 16px;
+        word-break: normal;
+        margin-right: 15px;
+    }
+}

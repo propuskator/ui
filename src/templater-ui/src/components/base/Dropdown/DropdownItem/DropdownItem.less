@@ -1,0 +1,103 @@
+@import '../../../../assets/variables.less';
+
+.DropdownItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 15px 0 15px;
+    font-size: 13px;
+    font-weight: 300;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    white-space: pre;
+    overflow: hidden;
+    transition: background-color 0.3s ease-in-out;
+
+    &.withTip {
+        display: flex;
+        flex-direction: column;
+        height: auto !important;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .tipBlock {
+            margin-top: 4px;
+            white-space: break-spaces;
+        }
+    }
+
+    * {
+        cursor: pointer;
+    }
+
+    .label {
+        &:extend(.M-TEXT-OVERFLOW);
+        align-items: center;
+        text-align: left;
+        font-size: 13px;
+        width: 100%;
+
+        &.selected&.multiple {
+            width: calc(100% - 20px);
+        }
+    }
+
+    .iconWrapper {
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+
+        .icon {
+            flex-grow: 1;
+        }
+
+        svg {
+            max-width: 20px;
+            max-height: 25px;
+        }
+    }
+
+    &.multiple {
+        &.selected {
+            position: relative;
+            padding: 0 40px 0 15px;
+
+            &::after {
+                position: absolute;
+                top: calc(50% - 8px);
+                right: 15px;
+                display: block;
+                width: 4px;
+                height: 9px;
+                content: '';
+                border: solid #02BDAF;
+                border-width: 0 2px 2px 0;
+                pointer-events: none;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &.selected {
+        background-color: var(--color_primary--100);
+    }
+
+    @media @M-WITH_HOVER {
+        &:hover {
+            background-color: var(--color_primary--100);
+        }
+    }
+
+    &.focused {
+        background-color: var(--color_primary--100);
+    }
+
+    &.darkTheme {
+        &.selected {
+            background-color: #305B5F;
+        }
+        border-color: @C-DARK-SECONDARY !important;
+    }
+}

@@ -1,0 +1,92 @@
+@import '../../../assets/variables.less';
+@import '../../../assets/mixins.less';
+
+.DeviceSettings {
+    &:extend(.M-MODAL); /* stylelint-disable-line */
+    align-items: stretch;
+    width: 540px;
+    height: 510px;
+    max-height: 90vh;
+    max-width: calc(100vw - 20px);
+    min-width: unset;
+    background: @C-WHITE;
+
+    &.empty {
+        height: 260px;
+    }
+
+    &.topModal {
+        &:extend(.M-MODAL--VISIBLE);
+    }
+
+    &.firstLevel {
+        &:extend(.M-MODAL--FIRST_LEVEL);
+        padding: 0;
+        width: 540px;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--FIRST_LEVEL);
+            word-break: break-word;
+            width: calc(100% - 30px);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--FIRST_LEVEL);
+        }
+    }
+
+    .content {
+        display: inline-flex;
+        flex-direction: column;
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    .title {
+        font-size: 14px;
+        margin-bottom: 10px;
+        padding: 18px 18px 0 18px;
+    }
+
+    .mainDataWrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        height: 0;
+    }
+
+    .tabContent {
+        display: flex;
+        min-height: 300px;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+    .tabsContainer {
+        padding: 0;
+    }
+
+    .tabsWrapper {
+        padding: 0 18px;
+    }
+
+    .doorStatusControl {
+        width: 120px;
+        transition: all 0.3s ease;
+
+        &.hidden {
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+        > * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lockIcon {
+            margin-left: 7px;
+        }
+    }
+}

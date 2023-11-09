@@ -1,0 +1,65 @@
+@import '../../../../assets/variables.less';
+
+.avatarChip {
+    display: inline-flex;
+    align-items: center;
+}
+
+.tagTooltip {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    word-break: break-all;
+
+    .tooltipIcon {
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        padding: 2px;
+        margin-right: 5px;
+
+        > path {
+            fill: @C-WHITE;
+        }
+    }
+}
+
+.errorTableRow {
+    background: rgba(223, 64, 64, 0.1) !important;
+    border-bottom: 0 solid transparent !important;
+
+    * {
+        color: @C-TEXT;
+    }
+
+    @media @M-WITH_HOVER {
+        &:hover {
+            background: rgba(223, 64, 64, 0.25) !important;
+        }
+    }
+}
+
+.mobileIconChip {
+    user-select: none;
+
+    > * {
+        transform: translateX(-1px) translateY(1px);
+    }
+}
+
+.exitButtonIcon {
+    margin-top: 7px;
+    margin-left: 5px;
+}
+
+.viewIcons {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.securityAlarmIcon {
+    margin: 4px 0 0 2px;
+}

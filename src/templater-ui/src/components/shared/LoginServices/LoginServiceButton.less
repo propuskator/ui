@@ -1,0 +1,31 @@
+@import '../../../assets/variables.less';
+
+.LoginServiceButton {
+    height: 45px;
+    min-width: 130px;
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .icon {
+        margin-right: 10px;
+    }
+
+    .text {
+        font-weight: 600;
+        color: #696974;
+    }
+
+    &:active {
+        border-color: var(--color_primary--500) !important;
+    }
+
+    @media @M-WITH_HOVER {
+        &:hover,
+        &:focus {
+            border-color: var(--color_primary--500) !important;
+        }
+    }
+}

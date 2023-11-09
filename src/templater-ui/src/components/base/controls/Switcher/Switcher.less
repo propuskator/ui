@@ -1,0 +1,122 @@
+@import '../../../../assets/variables.less';
+
+.Switcher {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    .optionsWrapper {
+        display: flex;
+        justify-content: flex-end;
+        width: calc(100% - 20px);
+    }
+
+    .options {
+        display: flex;
+        justify-content: flex-end;
+        width: auto;
+        height: 25px;
+        background: @C-WIDGET_CONTROL_BG;
+        border-radius: 5px;
+        border: 2px solid @C-WIDGET_CONTROL_BG;
+        flex-shrink: 0;
+
+        &.processing {
+            opacity: .7;
+            cursor: wait;
+        }
+
+        &.disabled .option {
+            opacity: 0.6;
+            cursor: not-allowed;
+            color: @C-DISABLED_WIDGET;
+
+            &:hover {
+                background: transparent;
+                box-shadow: none;
+            }
+        }
+    }
+
+    .option {
+        height: 100%;
+        width: 21px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2px;
+        border-right: none;
+        border-radius: 4px;
+        background: transparent;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background: rgba(256, 256, 256, 0.4);
+            box-shadow: @C-ACTIVE_WIDGET_SHADOW;
+        }
+
+        &.selected {
+            background: @C-WHITE;
+            color: @C-ACTIVE_WIDGET;
+            box-shadow: @C-ACTIVE_WIDGET_SHADOW;
+            cursor: default;
+        }
+
+        &.withRightDivider {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                top: 10%;
+                right: -1px;
+                content: '';
+                display: block;
+                width: 1px;
+                height: 80%;
+                background: #D6D6D6;
+            }
+        }
+    }
+
+    .value {
+        font-size: 8px;
+    }
+
+    .processingIndicator {
+        display: flex;
+        align-items: center;
+        width: 20px;
+        height: 23px;
+        margin-left: 3px;
+    }
+
+    &.darkTheme {
+        .options {
+            background: rgba(29, 33, 42, 0.2);
+            border: 1px solid @C-GREY_DARKEST;
+        }
+
+        .option.selected {
+            background: @C-GREY_DARK_3;
+            color: @C-PRIMARY_GREEN;
+        }
+
+        .option {
+            &:hover {
+                background: @C-DARK-SECONDARY--HOVER;
+            }
+
+            &.withRightDivider {
+                &::after {
+                    background: #6F6F6F;
+                }
+            }
+        }
+
+        .options.disabled {
+            background: @C-DARK-PRIMARY;
+            opacity: .7;
+        }
+    }
+}

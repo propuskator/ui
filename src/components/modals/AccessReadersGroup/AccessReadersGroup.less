@@ -1,0 +1,116 @@
+@import '../../../assets/variables.less';
+@import '../../../assets/mixins.less';
+
+.AccessReadersGroup {
+    &:extend(.M-MODAL); /* stylelint-disable-line */
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+    height: 560px;
+    width: 592px;
+    max-width: 100%;
+    background: @C-WHITE;
+    position: relative;
+
+    @media @M-TABLET_XS_TO, @M-MOBILE_LANDSCAPE_TO {
+        align-self: flex-start;
+        height: auto;
+        width: @MODAL-WIDTH_FIRST_LEVEL;
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    &.topModal {
+        &:extend(.M-MODAL--VISIBLE);
+    }
+
+    &.firstLevel {
+        &:extend(.M-MODAL--FIRST_LEVEL);
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--FIRST_LEVEL);
+        }
+    }
+
+    &.secondLevel {
+        &:extend(.M-MODAL--SECOND_LEVEL);
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--SECOND_LEVEL);
+        }
+    }
+
+    .content {
+        width: 230px;
+        min-height: 218px;
+
+        > * {
+            display: flex;
+            flex-direction: column;
+            min-height: inherit;
+            justify-content: space-between;
+        }
+    }
+
+    .draggableListWrapper {
+        margin-bottom: 0;
+
+        .draggableList {
+            height: 303px;
+        }
+    }
+
+    .mobileList {
+        margin-bottom: -9px;
+
+        > * {
+            height: 270px;
+            overflow: auto;
+        }
+
+        .chip {
+            width: auto;
+            max-width: 100%;
+        }
+
+        .expandedListDetails {
+            padding-left: 50px;
+        }
+    }
+
+    .sidebarList {
+        .chip {
+            max-width: calc(100% - 60px) !important;
+        }
+
+        .expandedListDetails {
+            margin-bottom: -4px;
+        }
+    }
+
+    .expandedListDetails {
+        width: 100%;
+        margin-bottom: 4px;
+
+        > * {
+            max-width: 100%;
+            margin-bottom: 4px;
+            margin-right: 4px;
+        }
+    }
+
+    .chip {
+        padding: 4px 8px 4px 8px;
+
+        &.preview {
+            opacity: 0.5;
+        }
+
+        button {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+    }
+}

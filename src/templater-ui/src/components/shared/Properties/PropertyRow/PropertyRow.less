@@ -1,0 +1,47 @@
+@import '../../../../assets/variables.less';
+
+.PropertyRow {
+    .mainData {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        width: 100%;
+        min-height: 43px;
+
+        .cell {
+            &:first-child {
+                width: calc(45% - 10px);
+            }
+
+            &:last-child {
+                width: calc(55% - 10px);
+            }
+        }
+    }
+
+    .cell {
+        display: flex;
+        align-items: center;
+
+        .defaultValue,
+        .propertyName {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            white-space: nowrap;
+            text-align: left;
+            user-select: none;
+
+            * {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                color: @C-BLACK;
+            }
+        }
+    }
+
+    .switchControl {
+        margin-left: -11px;
+    }
+}

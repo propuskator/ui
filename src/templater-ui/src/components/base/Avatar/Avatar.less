@@ -1,0 +1,70 @@
+@import '../../../assets/variables.less';
+
+@C-MAIN_AVATAR_COLOR: #808080;
+
+.avatarImageWrapper {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    border: 1px solid @C-GREY_MEDIUM;
+    border-radius: @S-BORDER_RADIUS;
+    color: @C-GREY_MEDIUM;
+    overflow: hidden;
+    display: block;
+    background: transparent;
+    margin-right: 5px;
+    margin-left: -1px;
+    border-color: @C-MAIN_AVATAR_COLOR !important;
+
+    &.fallback {
+        border: none !important;
+    }
+}
+
+.squared {
+    border-radius: @S-BORDER_RADIUS;
+}
+
+.squaredLeft {
+    border-radius: @S-BORDER_RADIUS 0 0 @S-BORDER_RADIUS;
+}
+
+.rounded {
+    border-radius: 50%;
+}
+
+.common {
+    border-radius: @S-BORDER_RADIUS;
+}
+
+.avatarImage {
+    &:extend(.avatarImageWrapper);
+    border: none;
+    object-fit: cover;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+.avatarFallback {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 9px;
+    text-align: center;
+    text-transform: uppercase;
+    background: @C-WHITE;
+    color: @C-MAIN_AVATAR_COLOR !important;
+}
+
+.loaderWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 4px 0 0;
+}

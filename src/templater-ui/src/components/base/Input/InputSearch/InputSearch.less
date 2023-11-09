@@ -1,0 +1,50 @@
+@import '../../../../assets/variables.less';
+
+.Input {
+    border-radius: 4px;
+
+    .clearIconButton {
+        &:extend(.M-CLEAR_BUTTON);
+    }
+
+    label {
+        &:extend(.M-LABEL);
+    }
+
+    input {
+        &:extend(.M-VALUE);
+        padding-right: 0 !important;
+        margin-left: 2px !important;
+        width: 100%;
+    }
+
+    .inputAdornment {
+        margin-left: @S-ADORNMENT-MARGIN;
+    }
+}
+
+.searchIcon {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-right: 10px;
+    pointer-events: none;
+    cursor: text;
+    user-select: none;
+    transition: opacity 0.3s ease;
+
+    path {
+        fill: @C-GREY_MEDIUM;
+    }
+
+    @media @M-WITH_HOVER {
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

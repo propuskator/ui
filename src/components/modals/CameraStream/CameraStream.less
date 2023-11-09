@@ -1,0 +1,138 @@
+@import '../../../assets/variables.less';
+
+.CameraStream {
+    &:extend(.M-MODAL);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto;
+    height: 475px !important;
+    width: 700px !important;
+    min-width: 100%;
+    background: @C-WHITE;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    @media @M-MOBILE_LANDSCAPE_TO {
+        width: 450px !important;
+        height: 340px !important;
+        overflow-y: auto;
+    }
+
+    @media @M-MOBILE_L_TO {
+        width: 700px !important;
+        height: 380px !important;
+        overflow-y: auto;
+    }
+
+    &.topModal {
+        &:extend(.M-MODAL--VISIBLE);
+    }
+
+    &.firstLevel {
+        &:extend(.M-MODAL--FIRST_LEVEL);
+        width: @MODAL-WIDTH_FIRST_LEVEL;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--FIRST_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--FIRST_LEVEL);
+            top: 11px;
+        }
+    }
+
+    &.secondLevel {
+        &:extend(.M-MODAL--SECOND_LEVEL);
+        width: @MODAL-WIDTH_SECOND_LEVEL;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--SECOND_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--SECOND_LEVEL);
+        }
+    }
+
+    .title {
+        margin-bottom: 16px;
+    }
+
+    .content {
+        position: relative;
+        width: 100%;
+        flex-grow: 1;
+        height: calc(100% - 80px);
+        max-height: calc(100% - 80px);
+
+        .loaderWrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .canvas {
+            width: 100%;
+            height: 100%;
+            background: @C-WHITE;
+            margin-bottom: 10px;
+        }
+    }
+
+    /*
+    .formControls {
+        width: 100%;
+    }
+    */
+
+    .errorMessage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        height: 100%;
+        background: @C-WHITE;
+
+        .errorIcon {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 16px;
+        }
+
+        .message {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .refreshButton {
+            min-width: 250px;
+            width: auto;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .posterPreview {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        user-select: none;
+        transition: all 0.3s ease;
+
+        &.hidden {
+            opacity: 0;
+        }
+    }
+}

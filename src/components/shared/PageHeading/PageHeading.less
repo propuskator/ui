@@ -1,0 +1,83 @@
+@import '../../../assets/variables.less';
+@import '../../../assets/mixins.less';
+
+.PageHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0 10px;
+    margin-bottom: 15px;
+
+    &.mobile {
+        flex-direction: row;
+        align-items: center;
+
+        .title {
+            margin-bottom: 0;
+        }
+    }
+
+    .title {
+        font-weight: 500;
+        align-self: center;
+        width: auto;
+        line-height: 18px;
+        user-select: none;
+
+        @media @M-TABLET_XS_TO {
+            width: 100%;
+        }
+    }
+
+    @media @M-TABLET_XS_TO {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 15px;
+
+        .title {
+            margin-bottom: 10px;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    .createMobileButton {
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        background-color: @C-ACTION_BUTTON !important;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        path {
+            fill: @C-WHITE !important;
+        }
+
+        @media @M-WITH_HOVER {
+            &:hover {
+                background: @C-ACTION_BUTTON--ACTIVE !important;
+            }
+        }
+    }
+
+    .createButton {
+        width: auto;
+        height: auto;
+        font-weight: 500;
+        line-height: 21px;
+
+        @media @M-TABLET_XS_TO {
+            width: 100%;
+        }
+    }
+}

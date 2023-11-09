@@ -1,0 +1,105 @@
+.Battery {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+
+    &.invalid {
+        .battery .bg {
+            opacity: 1;
+        }
+
+        .battery {
+            &::before {
+                content: '?';
+                position: absolute;
+                z-index: 2;
+                left: 50%;
+                bottom: 50%;
+                color: #B4BDBD;
+                font-size: 13px;
+                line-height: 0;
+                transform: translateX(-50%);
+            }
+        }
+
+        .value,
+        .unit {
+            display: none;
+        }
+    }
+
+    .value,
+    .unit {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    .unit {
+        margin-left: 2px;
+    }
+
+    .battery {
+        position: relative;
+        display: flex;
+        flex-shrink: 0;
+        width: 26px;
+        height: 16px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #B4BDBD;
+        border-radius: 4px;
+        margin-left: 7px;
+        margin-right: 3px;
+        padding: 1px;
+        transition: border-color .3s ease-in-out;
+
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .2;
+        }
+
+        .progress {
+            height: 100%;
+            max-width: 100%;
+            min-width: 0;
+            border-radius: 2px;
+            transition: background-color .3s ease-in-out;
+        }
+    }
+
+    .batteryStub {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        width: 3px;
+        height: 5px;
+        border-radius: 1px;
+        background-color: #B4BDBD;
+        transform: translateY(-50%);
+        transition: background-color .3s ease-in-out;
+    }
+
+    &.darkTheme {
+        .battery {
+            border-color: #BEBEBE;
+
+            &::before {
+                color: #CCC;
+            }
+        }
+
+        .batteryStub {
+            background-color: #BEBEBE;
+        }
+    }
+}
+
+.tooltip {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}

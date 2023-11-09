@@ -1,0 +1,88 @@
+@import '../../../assets/variables.less';
+@import '../../../assets/mixins.less';
+
+.Confirm {
+    &:extend(.M-MODAL); /* stylelint-disable-line */
+    align-items: stretch;
+    height: auto;
+    width: 275px;
+    min-height: unset;
+    max-height: 100%;
+    max-width: calc(100% - 20px);
+    min-width: unset;
+    background: @C-WHITE;
+
+    &.sizeL {
+        width: 386px !important;
+        max-width: calc(100vw - 20px);
+        height: 198px;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--SECOND_LEVEL);
+            margin-bottom: 0;
+        }
+
+        .message {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            margin: 12px 0;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+    }
+
+    &.topModal {
+        &:extend(.M-MODAL--VISIBLE);
+    }
+
+    &.firstLevel {
+        &:extend(.M-MODAL--FIRST_LEVEL);
+        width: @MODAL-WIDTH_FIRST_LEVEL;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--FIRST_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--FIRST_LEVEL);
+        }
+    }
+
+    &.secondLevel {
+        &:extend(.M-MODAL--SECOND_LEVEL);
+        max-width: 100%;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--SECOND_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--SECOND_LEVEL);
+        }
+    }
+
+    .content {
+        display: inline-flex;
+        flex-direction: column;
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    .title {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .message {
+        color: @C-BLACK;
+        margin-bottom: 12px;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+}

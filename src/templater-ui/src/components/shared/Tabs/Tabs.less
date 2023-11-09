@@ -1,0 +1,109 @@
+@import '../../../assets/variables.less';
+
+@S-TABS_HEIGHT: 35px;
+
+.Tabs {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+
+    .tabsWrapepr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &.centered {
+            justify-content: center;
+        }
+    }
+
+    &.withDivider {
+        .tabsWrapepr {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display: block;
+                height: 1px;
+                width: 100%;
+                content: '';
+                background: @C-GREY_LIGHT;
+                z-index: -1;
+            }
+        }
+    }
+
+    .tabs {
+        height: @S-TABS_HEIGHT;
+        min-height: @S-TABS_HEIGHT;
+
+        * {
+            outline: none !important;
+        }
+    }
+
+    .tab {
+        height: 35px !important;
+        text-transform: capitalize;
+        user-select: none;
+        min-width: unset !important;
+        min-height: unset !important;
+        padding: 0 5px !important;
+        margin-right: 30px !important;
+        transition: all 0.3s ease;
+
+        @media @M-MOBILE_L_TO {
+            margin-right: 10px !important;
+        }
+
+        & > span {
+            font-weight: 500;
+        }
+
+        &:last-child {
+            margin-right: 0 !important;
+        }
+
+        &:hover {
+            color: var(--primary_text_color);
+            opacity: 1;
+        }
+    }
+
+    .content {
+        margin: 10px 0 15px 0;
+        overflow-y: auto;
+    }
+
+    .indicator {
+        background-color: var(--color_primary--600);
+
+        &.fullWidth {
+            min-width: 100%;
+        }
+    }
+
+    .emptyMessageWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+        margin-top: -20px;
+
+        .icon {
+            height: 70px;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 300;
+            color: @C-GREY_MEDIUM;
+            user-select: none;
+        }
+    }
+}

@@ -1,0 +1,106 @@
+@import '../../../assets/variables.less';
+
+.AccessSchedule {
+    &:extend(.M-MODAL);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 545px;
+    min-width: 100%;
+    background: @C-WHITE;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @media @M-MOBILE_FROM {
+        width: 365px !important;
+        min-height: 469px;
+    }
+
+    @media @M-TABLET_XS_FROM {
+        width: 377px !important;
+        min-height: unset;
+    }
+
+    &.topModal {
+        &:extend(.M-MODAL--VISIBLE);
+    }
+
+    &.firstLevel {
+        &:extend(.M-MODAL--FIRST_LEVEL);
+        width: @MODAL-WIDTH_FIRST_LEVEL;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--FIRST_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--FIRST_LEVEL);
+            top: 11px;
+        }
+    }
+
+    &.secondLevel {
+        &:extend(.M-MODAL--SECOND_LEVEL);
+        width: @MODAL-WIDTH_SECOND_LEVEL;
+
+        .title {
+            &:extend(.M-MODAL_TITLE--SECOND_LEVEL);
+        }
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--SECOND_LEVEL);
+        }
+    }
+
+    .title {
+        margin-bottom: 16px;
+    }
+
+    .content {
+        width: 100%;
+
+        .subtitle {
+            margin: 8px 0;
+            text-align: center;
+
+            &.main {
+                margin-bottom: 16px;
+            }
+        }
+
+        .extensionControl {
+            margin: -10px auto 10px auto;
+            width: auto;
+        }
+
+        .weekDaysWrapper {
+            margin-bottom: 6px;
+        }
+    }
+
+    .periodicFieldsWrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: -10px;
+        margin-bottom: 16px;
+
+        @media @M-MOBILE_FROM {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .periodicFieldWrapper {
+            display: inline-flex;
+            flex-direction: column;
+        }
+    }
+
+    .formControls {
+        width: 100%;
+    }
+
+    .commonErrorMessage {
+        margin-bottom: 10px;
+    }
+}

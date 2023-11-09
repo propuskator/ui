@@ -1,0 +1,197 @@
+@import '../../../../assets/variables.less';
+
+@C-HEADER_GREY: #C0C0C0;
+@S-SELECT_WIDTH: 240px;
+@S-GAP: 20px;
+@S-ICON_WIDTH: 20px;
+@Z-SELECT: 99;
+@S-MENU_BUTTON: 40px;
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: @S-HEADER_HEIGHT;
+    color: @C-GREY_DARK;
+    border-bottom: 1px solid @C-GREY_LIGHT;
+    z-index: @Z-HEADER;
+
+    @media @M-TABLET_XS_TO, @M-MOBILE_LANDSCAPE_TO {
+        margin-bottom: 5px;
+    }
+
+    .leftBlock,
+    .rightBlock {
+        display: flex;
+    }
+
+    .menu {
+        margin-left: @S-GAP;
+        width: @S-MENU_BUTTON;
+        height: @S-MENU_BUTTON;
+
+        &:hover {
+            background: @C-GREY_LIGHT;
+        }
+    }
+
+    .user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+
+        .avatarWrapper {
+            margin-right: @S-GAP;
+
+            > * {
+                border-color: transparent !important;
+            }
+
+            @media @M-TABLET_XS_TO {
+                margin-right: 0;
+            }
+        }
+
+        .textContainer {
+            @media @M-TABLET_XS_TO {
+                display: none;
+            }
+        }
+    }
+
+    .textContainer {
+        &:extend(.M-TEXT-OVERFLOW);
+        max-width: 152px;
+    }
+
+    .loginLabel {
+        max-width: 125px;
+    }
+
+    .selectContainer {
+        position: relative;
+        height: @S-HEADER_HEIGHT;
+        width: @S-SELECT_WIDTH;
+        border-bottom: 1px solid @C-GREY_LIGHT;
+        z-index: @Z-SELECT;
+
+        @media @M-TABLET_XS_TO {
+            width: 95px;
+            right: 0;
+            left: auto;
+        }
+
+        .select {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            border: none;
+            color: @C-GREY_DARK;
+            background-color: @C-WHITE;
+            padding: 0 @S-GAP;
+            border-left: 1px solid @C-GREY_LIGHT;
+            font-size: 14px;
+            font-weight: 300;
+            outline: 0;
+            transition: 1s all;
+            user-select: none;
+
+            &:focus {
+                background-color: @C-GREY_LIGHT;
+            }
+
+            @media @M-WITH_HOVER {
+                &:hover {
+                    background-color: @C-GREY_LIGHT;
+                }
+            }
+        }
+    }
+
+    .options {
+        width: 100%;
+        border: 1px solid @C-GREY_LIGHT;
+        border-right: none;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+        z-index: @Z-SELECT;
+
+        &.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        @media @M-TABLET_XS_TO {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 250px;
+        }
+
+        .option {
+            text-decoration: none;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: @C-WHITE;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            color: @C-GREY_DARK;
+            width: 100%;
+            height: 100%;
+            padding: 16px @S-GAP;
+            font-size: 14px;
+            font-weight: 300;
+            transition: 1s all;
+            user-select: none;
+
+            &:focus {
+                background-color: @C-GREY_LIGHT;
+            }
+
+            &:hover {
+                background-color: @C-GREY_LIGHT;
+            }
+
+            .optionIcon {
+                margin-right: @S-GAP;
+                width: @S-ICON_WIDTH;
+            }
+        }
+    }
+
+    .arrowClose {
+        transform-origin: center;
+        transform: rotate(0deg);
+        transition: transform 0.3s;
+    }
+
+    .arrowOpen {
+        transform: rotate(180deg);
+        transition: transform 0.3s;
+    }
+
+    .themeSelect {
+        width: 100%;
+        padding: 0 10px;
+
+        @media @M-MOBILE_L_TO, @M-MOBILE_LANDSCAPE_TO {
+            padding: 0;
+        }
+
+        > * {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0;
+        }
+    }
+}

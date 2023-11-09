@@ -1,0 +1,13 @@
+{
+    "Error": "Error",
+    "Server error": "Server error",
+    "Broker connection lost": "Broker connection lost",
+    "Something went wrong": "Something went wrong",
+    "Failed to generate csv file \"Access Log\"": "Failed to generate csv file \"Access Log\"",
+    "Failed to generate csv file \"Subjects\"": "Failed to generate csv file \"Subjects\"",
+    "Failed to generate csv file \"Tags\"": "Failed to generate csv file \"Tags\"",
+    "Please contact your system administrator!": "Please contact your system administrator!",
+    "The value was not set": "The value was not set",
+    "Session has been expired": "Session has been expired",
+    "Please login again": "Please login again"
+}

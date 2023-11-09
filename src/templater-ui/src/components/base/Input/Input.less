@@ -1,0 +1,215 @@
+@import './../../../assets/variables.less';
+@import './../../../assets/mixins.less';
+
+.inputWrapper {
+    width: 100%;
+    height: @S-FIELD_HEIGHT;
+    min-height: @S-FIELD_HEIGHT;
+
+    &.withClearButton {
+        input {
+            padding-right: 3px !important;
+        }
+    }
+
+    &.multiline {
+        height: auto;
+
+        .root {
+            &:extend(.M-VALUE);
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            padding-right: 0 !important;
+            overflow: visible !important;
+        }
+
+        .input {
+            overflow: visible;
+        }
+
+        textarea {
+            margin-left: 2px !important;
+            margin-top: 10px !important;
+            margin-bottom: 10px !important;
+        }
+
+        fieldset {
+            transform: translateZ(0);
+        }
+    }
+
+    &.forceFocused {
+        label {
+            transform: translate(11px, -6px) scale(0.75) !important;
+            color: var(--color_primary--500);
+        }
+
+        fieldset {
+            border-width: @S-FOCUSED_BORDER_WIDTH;
+            border-color: var(--color_primary--500);
+        }
+    }
+
+    &.loading {
+        input {
+            padding-right: 10px !important;
+        }
+    }
+
+    &.withValue {
+        label {
+            transform: translate(11px, -6px) scale(0.75) !important;
+        }
+
+        &:hover label {
+            color: var(--color_primary--500);
+        }
+    }
+
+    .inputAdornment {
+        height: 100%;
+        min-height: 100%;
+        pointer-events: all;
+        cursor: pointer !important;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+
+        * {
+            cursor: pointer !important;
+        }
+
+        .clearIconButton {
+            &:extend(.M-CLEAR_BUTTON);
+        }
+    }
+
+    .input {
+        height: 100%;
+        background: @C-WHITE;
+
+        &:hover fieldset {
+            border-color: var(--color_primary--500);
+        }
+    }
+
+    @input: {
+        margin-left: 2px !important;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    input {
+        &:extend(.M-VALUE);
+        @input();
+    }
+
+    fieldset {  /* stylelint-disable-line */
+        border-color: @C-INPUT_BORDER;
+        transition: all 0.3s ease;
+        border-width: @S-FOCUSED_BORDER_WIDTH !important;
+        user-select: none;
+    }
+
+    .inputLabel {
+        &:extend(.M-LABEL);
+        max-width: 80%;
+        line-height: unset;
+
+        @media @M-MOBILE_TO {
+            max-width: 80%;
+        }
+
+        @supports @MS-IOS {
+            transform: translate(14px, 9px) scale(1);
+        }
+    }
+
+    &.error {
+        .inputLabel {
+            color: @C-ERROR !important;
+        }
+
+        fieldset {  /* stylelint-disable-line */
+            border-color: @C-ERROR !important;
+
+            &:hover {
+                border-color: @C-ERROR !important;
+            }
+        }
+    }
+
+    .loaderWrapper {
+        margin-right: 10px;
+    }
+
+    &.disabled {
+        opacity: @O-FIELD_DISABLED_OPACITY;
+
+        .inputAdornment {
+            pointer-events: none !important;
+        }
+
+        fieldset {
+            border-color: @C-INPUT_BORDER !important;
+        }
+
+        .inputLabel {
+            color: rgba(0, 0, 0, 0.54) !important;
+        }
+
+        &.withDisableBg {
+            .input {
+                background: @C-INPUT_DISABLED !important;
+
+                input {
+                    background: transparent !important;
+                }
+            }
+
+            &.withoutValue {
+                .inputLabel {
+                    background: @C-INPUT_DISABLED !important;
+                }
+            }
+        }
+    }
+
+    &.darkTheme {
+        .inputLabel {
+            &:extend(.M-LABEL--DARK);
+
+            &.inputLabelShrink {
+                transform: translate(14px, -6px) scale(0.75);
+                background: @C-DARK-PRIMARY !important;
+            }
+        }
+
+        .input {
+            background: @C-DARK-SECONDARY;
+        }
+
+        .inputAdornment {
+            background: @C-DARK-SECONDARY;
+        }
+
+        input {
+            &:extend(.M-VALUE--DARK);
+            @input();
+        }
+    }
+}
+
+.shortcuts {
+    display: flex;
+    margin-top: 6px;
+    margin-left: 1px;
+
+    .shortcut {
+        background-color: @C-WHITE;
+        padding: 0;
+        margin: -2px 20px 5px 0;
+        font-size: 10px;
+    }
+}

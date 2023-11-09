@@ -1,0 +1,30 @@
+@import '../../../../assets/variables.less';
+
+.Filters {
+    .typeFilter,
+    .statusFilter {
+        width: 155px;
+    }
+
+    .editDate,
+    .createDate {
+        width: 230px;
+    }
+
+    .accessReadersGroupFilter {
+        width: 210px;
+    }
+
+    @media @M-MOBILE_TO {
+        label {
+            width: 80%;
+        }
+    }
+
+    .selectedChipValue {
+        display: flex;
+        align-self: stretch;
+        flex-grow: 1;
+        width: 100%;
+    }
+}

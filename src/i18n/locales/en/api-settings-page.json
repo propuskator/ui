@@ -1,0 +1,17 @@
+{
+    "API Settings": "API Settings",
+    "Access token": "Access token",
+    "Update token": "Update token",
+    "Access token has been updated": "Access token has been updated",
+    "Access token hasn't been updated": "Access token hasn't been updated",
+    "Update access token": "Update access token",
+    "Cancel": "Cancel",
+    "The access token will be updated. You cannot undo this action. Access points added earlier with the current token will stop working.": "The access token will be updated. You cannot undo this action. Access points added earlier with the current token will stop working.",
+    "Certificate": "Certificate",
+    "Server URL": "Server URL",
+    "Broker port": "Broker port",
+    "QR code hasn't been downloaded": "QR code hasn't been downloaded",
+    "QR code for subject registration": "QR code for subject registration",
+    "QR code": "QR code",
+    "Deep link for subject registration": "Deep link for subject registration"
+}

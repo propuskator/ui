@@ -1,0 +1,131 @@
+@import "../../../assets/variables.less";
+@import "../../../assets/mixins.less";
+
+.CustomForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    overflow: visible;
+
+    .formFields {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        overflow: visible;
+    }
+
+    .fieldSet {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        overflow: visible;
+    }
+
+    .title {
+        margin-bottom: 20px;
+        text-align: start;
+    }
+
+    .fieldTitle {
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+
+        &.processing {
+            opacity: @O-FIELD_DISABLED_OPACITY;
+            pointer-events: none;
+        }
+    }
+
+    .error {
+        text-align: center;
+        padding: 0;
+
+        &.commonError {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .fieldWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 35px;
+        width: 100%;
+        margin-bottom: 10px;
+
+        &.asyncString {
+            margin-bottom: 22px;
+        }
+
+        &.copyText {
+            margin-bottom: 10px;
+
+            .fieldTitle {
+                display: flex;
+                align-items: center;
+                margin-bottom: -2px;
+
+                .copyTextButton {
+                    margin-left: 10px;
+                }
+            }
+
+            &.default {
+                margin-bottom: 22px;
+
+                .fieldTitle {
+                    margin-bottom: 10px;
+                    margin-top: -13px;
+                }
+            }
+        }
+
+        &.draggableList {
+            flex-grow: 1;
+
+            @media @M-TABLET_XS_TO, @M-MOBILE_LANDSCAPE_TO {
+                display: none;
+                margin-bottom: 0;
+            }
+        }
+
+        &.mobileEntityList {
+            @media @M-TABLET_XS_FROM {
+                display: none;
+                margin-bottom: 0;
+            }
+
+            @media @M-MOBILE_LANDSCAPE_TO {
+                display: flex;
+                margin-bottom: 10px;
+            }
+        }
+
+        .colorSelectWrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .colorSelectTitle {
+                margin-right: 20px;
+            }
+
+            @media @M-MOBILE_L_TO, @M-MOBILE_LANDSCAPE_TO {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .colorSelect {
+                    margin: 15px 0;
+                }
+            }
+        }
+
+        > * {
+            width: 100%;
+        }
+    }
+}

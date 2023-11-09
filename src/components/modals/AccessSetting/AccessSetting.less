@@ -1,0 +1,259 @@
+@import '../../../assets/variables.less';
+@import '../../../assets/mixins.less';
+
+@S-BLOCKS_MARGIN: 7px;
+
+.AccessSetting {
+    &:extend(.M-MODAL); /* stylelint-disable-line */
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+    height: 705px;
+    width: 592px;
+    max-width: 100%;
+    background: @C-WHITE;
+    position: relative;
+
+    @media @M-TABLET_XS_TO, @M-MOBILE_LANDSCAPE_TO {
+        align-self: flex-start;
+        height: 712px;
+        width: @MODAL-WIDTH_FIRST_LEVEL;
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    &.topModal {
+        &:extend(.M-MODAL--VISIBLE);
+    }
+
+    &.firstLevel {
+        &:extend(.M-MODAL--FIRST_LEVEL);
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--FIRST_LEVEL);
+        }
+    }
+
+    &.secondLevel {
+        &:extend(.M-MODAL--SECOND_LEVEL);
+
+        .closeButton {
+            &:extend(.M-MODAL_CLOSE--SECOND_LEVEL);
+        }
+    }
+
+    .entityWithSidebarContent {
+        overflow: auto;
+    }
+
+    .draggableListPanel {
+        > * {
+            overflow: visible !important;
+        }
+    }
+
+    .sidebarList {
+        position: static;
+        min-height: unset;
+        max-height: unset;
+
+        > * {
+            flex-shrink: 0;
+            height: 190px;
+            margin-bottom: @S-BLOCKS_MARGIN;
+        }
+
+        > *:last-child {
+            margin-bottom: 0;
+        }
+
+        .listItemPreview {
+            width: calc(100% - 40px);
+
+            &.expandable {
+                width: calc(100% - 90px);
+            }
+
+            &.notExpandable {
+                > * {
+                    max-width: calc(100% - 25px);
+                }
+            }
+
+            * {
+                cursor: unset !important;
+            }
+        }
+    }
+
+    .mobileAccessSchedulesList,
+    .mobileReadersList,
+    .mobileAccessSubjectsList {
+        height: 170px;
+        margin-top: @S-BLOCKS_MARGIN;
+
+        @media @M-TABLET_XS_TO, @M-MOBILE_LANDSCAPE_TO {
+            margin-top: 20px;
+        }
+
+        .listItemPreview {
+            &.expandable {
+                padding-right: 27px;
+            }
+        }
+
+        .expandedListDetails {
+            padding-left: 50px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+
+        .scheduleList {
+            margin-bottom: 0;
+        }
+    }
+
+    .mobileAccessSchedulesList,
+    .mobileReadersList {
+        height: 170px;
+
+        .expandedListDetails {
+            padding-left: 50px;
+            padding-right: 10px;
+        }
+
+        .listItemPreview {
+            > * {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .mobileAccessSubjectsList {
+        margin-top: 0;
+
+        .listItemPreview {
+            &.notExpandable,
+            &.expandable {
+                width: 100%;
+            }
+        }
+    }
+
+    .accessSubjectsSidebarPanel {
+        .listItemPreview {
+            &.notExpandable,
+            &.expandable {
+                width: calc(100% - 55px);
+
+                > * {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .accessSubjectsDraggableList {
+        .listItemPreview {
+            padding-left: 1px;
+        }
+    }
+
+    .accessSchedulesDraggableList,
+    .readersDraggableList,
+    .accessSubjectsDraggableList {
+        height: 162px;
+        max-width: calc(100% - 1px);
+        flex-shrink: 0;
+        flex-grow: unset;
+        margin-bottom: 0;
+        overflow: hidden;
+
+        .listItemPreview {
+            width: auto;
+            max-width: unset;
+
+            > * {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .readersDraggableList {
+        height: 160px;
+    }
+
+    .accessSchedulesDraggableListsWrapper {
+        margin-bottom: 0;
+    }
+
+    .listItemPreview {
+        width: 100%;
+
+        &.preview {
+            opacity: 0.6;
+        }
+    }
+
+    .expandedListDetails {
+        font-size: 11px;
+
+        &.chipList {
+            margin-bottom: -4px;
+
+            > * {
+                margin-bottom: 4px;
+                margin-right: 4px;
+            }
+        }
+
+        .descriptionField {
+            display: flex;
+            margin-bottom: 10px;
+
+            &:first-child {
+                margin-top: 8px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.accessTokenList {
+                margin-top: -4px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                .fieldName {
+                    height: 18px;
+                    line-height: 18px;
+                }
+
+                .fieldValue.accessTokensWrapper {
+                    margin-bottom: -3px;
+
+                    > * {
+                        margin-bottom: 3px;
+                        margin-left: 3px;
+                    }
+                }
+            }
+
+            .fieldName {
+                font-weight: bold;
+                margin-right: 5px;
+            }
+
+            .fieldValue {
+                word-break: break-all;
+            }
+        }
+    }
+
+    .scheduleList {
+        white-space: pre-line;
+    }
+}

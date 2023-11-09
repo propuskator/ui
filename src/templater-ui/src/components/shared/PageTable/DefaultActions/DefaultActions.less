@@ -1,0 +1,57 @@
+@import '../../../../assets/variables.less';
+
+.DefaultActions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+
+    .iconButtonWrapper {
+        position: relative;
+
+        &.processing {
+            .iconButton {
+                opacity: @O-FIELD_DISABLED_OPACITY;
+                pointer-events: none;
+            }
+        }
+
+        .loaderWrapper {
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            transition: opacity 0.3s ease;
+
+            > * {
+                width: 25px !important;
+                height: 25px !important;
+            }
+
+            &.hidden {
+                pointer-events: none;
+                opacity: 0;
+            }
+        }
+    }
+
+    .iconButton {
+        transition: opacity 0.3s ease;
+
+        > * {
+            height: 30px;
+        }
+
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        path {
+            fill: @C-GREY_DARK;
+        }
+    }
+}
+
+.tooltip {
+    margin-top: 6px !important;
+}

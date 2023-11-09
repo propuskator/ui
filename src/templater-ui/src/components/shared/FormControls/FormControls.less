@@ -1,0 +1,62 @@
+@import "../../../assets/variables.less";
+@import "../../../assets/mixins.less";
+
+.FormControls {
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    padding-bottom: 1px;
+    padding-right: 1px;
+
+    @media @M-MOBILE_TO {
+        justify-content: space-between;
+    }
+
+    &.singleControl {
+        display: flex;
+        justify-content: flex-end;
+
+        .control {
+            width: auto;
+            margin-left: 0;
+        }
+    }
+
+    &.withCustomBlock {
+        justify-content: flex-end !important;
+        align-items: center;
+    }
+
+    .control {
+        outline: none;
+        font-style: normal;
+        font-weight: normal;
+        padding: 7px 23px;
+        margin-right: 18px;
+        user-select: none;
+        width: auto;
+        min-width: 150px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @media @M-MOBILE_TO {
+            min-width: calc(50% - 9px);
+        }
+
+        .desktop {
+            display: none;
+        }
+
+        @media @M-TABLET_XS_FROM {
+            .mobile {
+                display: none;
+            }
+
+            .desktop {
+                display: inline-flex;
+            }
+        }
+    }
+}

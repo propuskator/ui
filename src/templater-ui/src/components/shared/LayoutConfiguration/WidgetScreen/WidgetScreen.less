@@ -1,0 +1,50 @@
+@import '../../../../assets/variables.less';
+
+.WidgetScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 3;
+
+    &.initialized {
+        opacity: 1;
+    }
+
+    &.darkTheme {
+        .screenContent {
+            background: @C-DARK-SECONDARY;
+        }
+    }
+
+    .overlay {
+        height: 120px;
+    }
+
+    .screenContent {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        height: calc(100% - 120px);
+        background: @C-WIDGET_BG;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .control {
+        svg {
+            width: 10px;
+        }
+    }
+}
+
+.tooltip {
+    margin-top: 5px !important;
+}

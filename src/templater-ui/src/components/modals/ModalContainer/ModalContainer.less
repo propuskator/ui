@@ -1,0 +1,73 @@
+@import '../../../assets/variables.less';
+
+.ModalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: @Z-MODAL;
+
+    > * {
+        grid-column: ~'1/2';
+        grid-row: ~'1/2';
+    }
+
+    > *:not(.overlay) {
+        &:last-child {
+            z-index: @Z-MODAL;
+        }
+    }
+
+    .secondLevelModals {
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: @Z-MODAL;
+    }
+
+    .overlay {
+        width: 100vw;
+        height: 100%;
+        background: @C-MODAL_BG;
+    }
+
+    &.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.modalPaper {
+    max-width: unset !important;
+    border-radius: 5px !important;
+    margin: 20px auto !important;
+    box-shadow: unset !important;
+    font-size: 0;
+
+    &.withoutBorders {
+        border-radius: 0 !important;
+    }
+
+    &.transparent {
+        background-color: transparent !important;
+    }
+
+    > * {
+        font-size: 15px;
+    }
+}
+
+.modalRoot {
+    > * {
+        background-color: transparent !important;
+    }
+}

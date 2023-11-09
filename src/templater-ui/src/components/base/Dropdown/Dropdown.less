@@ -1,0 +1,134 @@
+@import '../../../assets/variables.less';
+
+.Dropdown {
+    flex: 1;
+    position: relative;
+    align-self: flex-start;
+
+    &:not(.opened) {
+        .inputWrapper * {
+            cursor: pointer !important;
+        }
+    }
+
+    &:hover fieldset {
+        border-color: var(--color_primary--500);
+    }
+
+    &.withoutSearch {
+        .inputWrapper * {
+            cursor: pointer !important;
+            caret-color: transparent !important;
+        }
+
+        .valueWrapper {
+            pointer-events: none;
+        }
+
+        &.opened {
+            .inputWrapper * {
+                cursor: default !important;
+            }
+        }
+    }
+
+    &.processing {
+        pointer-events: none !important;
+
+        * {
+            pointer-events: none !important;
+        }
+    }
+
+    .inputWrapper {
+        position: relative;
+
+        .inputAdornment {
+            min-width: 33px;
+            height: 100%;
+            pointer-events: all;
+            cursor: pointer !important;
+
+            * {
+                cursor: pointer !important;
+            }
+
+            input {
+                pointer-events: none;
+            }
+
+            .clearIconButton {
+                &:extend(.M-CLEAR_BUTTON);
+            }
+        }
+    }
+
+    .arrowIcon {
+        width: 30px;
+        margin-right: 3px;
+        pointer-events: all;
+        transition: all 0.3s ease;
+    }
+
+    &.opened {
+        z-index: @Z-PORTAL_DROPDOWN;
+
+        .arrowIcon {
+            transform: rotate(180deg);
+        }
+    }
+
+    &.disabled {
+        pointer-events: none !important;
+        opacity: @O-FIELD_DISABLED_OPACITY;
+    }
+
+    .valueWrapper {
+        &:extend(.M-VALUE);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding-right: 35px !important;
+        background: transparent;
+        pointer-events: none;
+
+        > * {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-grow: 1;
+            max-width: 100%;
+        }
+    }
+
+    &.darkTheme {
+        .arrowIcon svg path {
+            fill: @C-WHITE;
+        }
+
+        fieldset {
+            border-color: @C-GREY_DARKEST;
+        }
+
+        &.opened,
+        &:hover {
+            fieldset {
+                border-color: @C-PRIMARY_GREEN--DARK;
+            }
+        }
+    }
+}
+
+.loaderWrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+
+    .loader {
+        color: @C-GREY_DARK;
+        margin-left: 10px;
+    }
+}

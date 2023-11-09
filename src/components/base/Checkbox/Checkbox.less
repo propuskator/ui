@@ -1,0 +1,41 @@
+@import '../../../assets/variables.less';
+
+.Checkbox {
+    display: flex;
+    padding: 5px;
+    cursor: pointer;
+
+    @media @M-WITH_HOVER {
+        &:hover {
+            .button {
+                background: var(--color_primary--300);
+                border: 1px solid var(--color_primary--300);
+                opacity: 0.7;
+            }
+        }
+    }
+
+    .button {
+        width: 11px;
+        height: 11px;
+        padding: 0;
+        border: 1px solid @C-GREY_MEDIUM;
+        background: @C-WHITE;
+        border-radius: 50%;
+        outline: 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:focus {
+            background: var(--color_primary--100);
+            border: 1px solid var(--color_primary--100);
+        }
+    }
+
+    &.checked {
+        .button {
+            background: var(--color_primary--500);
+            border: 1px solid var(--color_primary--500);
+        }
+    }
+}

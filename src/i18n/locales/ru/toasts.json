@@ -1,0 +1,13 @@
+{
+    "Error": "Ошибка",
+    "Server error": "Ошибка сервера",
+    "Broker connection lost": "Связь с брокером потеряна",
+    "Something went wrong": "Что-то пошло не так",
+    "Failed to generate csv file \"Access Log\"": "Не удалось сгенерировать csv файл \"Журнал доступа\"",
+    "Failed to generate csv file \"Subjects\"": "Не удалось сгенерировать csv файл \"Субъекты\"",
+    "Failed to generate csv file \"Tags\"": "Не удалось сгенерировать csv файл \"Метки\"",
+    "Please contact your system administrator!": "Пожалуйста, свяжитесь с вашим системным администратором!",
+    "The value was not set": "Значение не было установлено",
+    "Session has been expired": "Время сессии истекло",
+    "Please login again": "Пожалуйста, войдите повторно"
+}

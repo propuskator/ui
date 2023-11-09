@@ -1,0 +1,102 @@
+@import '../../../assets/variables.less';
+
+.Link {
+    &:extend(.M-LINK_CONTROL);
+    text-align: left;
+    word-break: break-all;
+    transition: all 0.3s ease;
+
+    &.processing {
+        pointer-events: none;
+        opacity: @O-FIELD_DISABLED_OPACITY;
+    }
+
+    &.underline {
+        text-decoration-style: solid !important;
+        -webkit-text-decoration-style: solid !important;
+    }
+
+    &.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &.grey {
+        color: @C-GREY_DARK;
+        text-decoration-color: @C-GREY_DARK;
+        -webkit-text-decoration-color: @C-GREY_DARK;
+
+        @media @M-WITH_HOVER {
+            &:hover {   /* .M-LINK_CONTROL--HOVER mixin doesn't work */
+                color: @C-GREY_DARK--HOVER;
+                text-decoration-color: transparent;
+                -webkit-text-decoration-color: transparent;
+            }
+        }
+
+        &:focus {
+            &:extend(.M-LINK_CONTROL--FOCUS);
+            color: @C-GREY_DARK--HOVER;
+        }
+    }
+
+    &.orange {
+        color: @C-ORANGE;
+        text-decoration-color: @C-ORANGE;
+        -webkit-text-decoration-color: @C-ORANGE;
+
+        @media @M-WITH_HOVER {
+            &:hover {   /* .M-LINK_CONTROL--HOVER mixin doesn't work */
+                color: @C-ORANGE--HOVER;
+                text-decoration-color: transparent;
+                -webkit-text-decoration-color: transparent;
+            }
+        }
+
+        &:focus {
+            &:extend(.M-LINK_CONTROL--FOCUS);
+            color: @C-ORANGE--HOVER;
+        }
+    }
+
+    &.primary {
+        &:extend(.M-LINK_CONTROL);
+
+        @media @M-WITH_HOVER {
+            &:hover {   /* .M-LINK_CONTROL--HOVER mixin doesn't work */
+                color: var(--color_primary--700);
+                text-decoration: underline dashed transparent;
+                -webkit-text-decoration: underline dashed transparent;
+            }
+        }
+
+        &:focus {
+            &:extend(.M-LINK_CONTROL--FOCUS);
+        }
+    }
+
+    &.primaryGreen {
+        color: @C-PRIMARY_GREEN;
+        text-decoration-color: @C-PRIMARY_GREEN;
+        -webkit-text-decoration-color: @C-PRIMARY_GREEN;
+
+        @media @M-WITH_HOVER {
+            &:hover {   /* .M-LINK_CONTROL--HOVER mixin doesn't work */
+                color: @C-PRIMARY_GREEN--DARK;
+                text-decoration-color: transparent;
+                -webkit-text-decoration-color: transparent;
+            }
+        }
+
+        &:focus {
+            &:extend(.M-LINK_CONTROL--FOCUS);
+            color: @C-PRIMARY_GREEN--DARK;
+        }
+    }
+
+    &.withoutUnderline {
+        text-decoration: none !important;
+        text-decoration-color: transparent !important;
+        -webkit-text-decoration-color: transparent !important;
+    }
+}
